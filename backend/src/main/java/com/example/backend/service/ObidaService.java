@@ -1,0 +1,14 @@
+package com.example.backend.service;
+
+import com.example.backend.dto.BxObida;
+import com.example.backend.dto.RahbariyatDto;
+import org.springframework.http.HttpEntity;
+
+import java.util.UUID;
+
+public interface ObidaService {
+    HttpEntity<?> getObida();
+    HttpEntity<?>postObida(BxObida bxObida);
+    HttpEntity<?> deleteObida(UUID id);
+    HttpEntity<?> editObida(UUID id, BxObida bxObida);
+}

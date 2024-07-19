@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+header .wrapper{
+    height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+
+}
+header .wrapper p {
+    font-family: Rakkas;
+    font-size: 16.84px;
+    font-weight: 600;
+    line-height: 25.11px;
+    text-align: left;
+    margin: 0;
+    color:white;
+    letter-spacing: 1px;
+
+
+
+}
+header .div1{
+  width: 100%;
+    height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+header .div4{
+    width: 100%;
+    height: 100%;
+    padding-inline: 40px;
+}
+
+header .ul{
+    display: flex;
+    align-items: center;
+    padding-top: 45px;
+    list-style: none;
+    justify-content: space-between;
+}
+
+header .ul a{
+    color: #0E5344E5;
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+header .headerTop{
+    width: 100%;
+    background: #0E5344E5;
+    height: 67px;
+}
+header .headerBottom{
+    width: 100%;
+    background-color: white;
+}
+.wrapper1{
+    max-width: 1920px;
+    margin: 0 auto;
+    height: 140px;
+
+
+}

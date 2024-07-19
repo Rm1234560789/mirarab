@@ -1,0 +1,15 @@
+.wrapper{
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-inline: 10px;
+
+}
+
+.text{
+    text-align: center;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

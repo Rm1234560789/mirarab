@@ -1,0 +1,37 @@
+import {useParams} from "react-router-dom"
+import {useEffect} from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { getInfo } from '../reducer/maqolaReducer.js';
+import Header from "../components/Header.jsx";
+import Footer from "../components/Footer.jsx";
+
+function Maqolas(){
+    const {uuid} = useParams();
+    const dispatch = useDispatch();
+    const { info } = useSelector(state => state.maqolaReducer);
+    useEffect(() => {
+        dispatch(getInfo(uuid))
+    }, [dispatch]);
+    return(
+        <div>
+            <Header/>
+            <div className={"wrapper"}>
+                <div className={" gap-3 div2"}>
+                    <div style={{float:"left"}}>
+                        {
+                            <img style={{marginRight:"15px",marginBottom:"10px"}}  width={500} src={`http://localhost:8080/api/files/img?name=${info.img}`} alt=""/>
+                        }
+                    </div>
+                    <div>
+                        <h1>{info.title}</h1>
+                        <h4>{info.description}</h4>
+                    </div>
+                </div>
+            </div>
+            <Footer/>
+        </div>
+
+    )
+}
+
+export default Maqolas

@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App-header {
+    background-color: #282c34;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+
+.nav-links li {
+    padding: 10px 15px;
+    border: 2px solid #000;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links li:hover {
+    background-color: #61dafb;
+}
+
+
+
+.upload-section {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.file-input {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.upload-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.upload-preview {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.upload-preview img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.upload-preview p {
+    flex-grow: 1;
+    margin: 0;
+}
+
+.edit-button,
+.delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.save-button {
+    background-color: #61dafb;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
