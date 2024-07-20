@@ -37,11 +37,11 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.POST, "/auth/login","/maqola","/manaviyat","/madrasahq","/professor","/qadam").permitAll()
                         .requestMatchers("/api/files/pdf/{id}").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/files/img","/api/files/video","/video","/news","/rahbariyat","/bux","/obida","/alloma","/qabul","/xalqaro","/xorij").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/files/img","/manaviyat","/maqola","/madrasahq","/professor","/izohlar","/news","api/files/img/pdf","/bux","/obida","/qadam","/alloma","/qabul","/xalqaro","/xorij").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/files/img","/api/files/video","/video","/news","/rahbariyat","/bux","/obida","/alloma","/qabul","/xalqaro","/xorij","/vd","/audio","/raddiya","/ustoz","/talaba").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/files/img","/manaviyat","/maqola","/madrasahq","/professor","/izohlar","/news","api/files/img/pdf","/bux","/obida","/qadam","/alloma","/qabul","/xalqaro","/xorij","/vd","/audio","/raddiya","/talaba","/ustoz").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/files/video","/video","/news/{id}","/rahbariyat","/maqola/{id}","/madrasahq/{id}").permitAll()
-                        .requestMatchers(HttpMethod.PUT, "/video/{id}","/news/{id}","/rahbariyat/{id}","/maqola/{id}","/manaviyat/{id}","/madrasahq/{id}","/professor/{id}","/bux/{id}","/obida/{id}","/qadam/{id}","/alloma/{id}","/qabul/{id}","/xalqaro/{id}","/xorij/{id}").permitAll()
-                        .requestMatchers(HttpMethod.DELETE, "/video/{id}","/news/{id}","/rahbariyat/{id}","/maqola/{id}","/manaviyat/{id}","/madrasahq/{id}","/professor/{id}","/bux/{id}","/obida/{id}","/qadam/{id}","/alloma/{id}","/qabul/{id}","/xalqaro/{id}","/xorij/{id}").permitAll()
+                        .requestMatchers(HttpMethod.PUT, "/video/{id}","/news/{id}","/rahbariyat/{id}","/maqola/{id}","/manaviyat/{id}","/madrasahq/{id}","/professor/{id}","/bux/{id}","/obida/{id}","/qadam/{id}","/alloma/{id}","/qabul/{id}","/xalqaro/{id}","/xorij/{id}","/vd/{id}","/audio/{id}","/raddiya/{id}","/talaba/{id}","/ustoz/{id}").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/video/{id}","/news/{id}","/rahbariyat/{id}","/maqola/{id}","/manaviyat/{id}","/madrasahq/{id}","/professor/{id}","/bux/{id}","/obida/{id}","/qadam/{id}","/alloma/{id}","/qabul/{id}","/xalqaro/{id}","/xorij/{id}","/vd/{id}","/audio/{id}","/raddiya/{id}","/talaba/{id}","/ustoz/{id}").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(myFilter, UsernamePasswordAuthenticationFilter.class);

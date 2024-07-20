@@ -1,7 +1,5 @@
 import {Route, Routes} from "react-router-dom";
 import News from "./pages/News.jsx";
-import Header from "./components/Header.jsx";
-import Footer from "./components/Footer.jsx";
 import Admin from "./pages/Admin.jsx";
 import BoshSahifa from "./pages/BoshSahifa.jsx";
 import OliyMadrasa from "./pages/OliyMadrasa.jsx";
@@ -25,6 +23,11 @@ import Qabul from "./pages/Qabul.jsx";
 import Shartnoma from "./pages/xalqaro/Shartnoma.jsx";
 import Xorij from "./pages/xalqaro/Xorij.jsx";
 import Xalqaro from "./pages/xalqaro/Xalqaro.jsx";
+import React from "react";
+import Video from "./pages/media/Video.jsx";
+import Media from "./pages/media/Media.jsx";
+import RaddiyaVd from "./pages/media/RaddiyaVd.jsx";
+import Audio from "./pages/media/Audio.jsx";
 
 function App() {
 
@@ -52,6 +55,11 @@ function App() {
                   <Route path={"xalqaro"} element={<Xalqaro/>}>
                       <Route path={"xalqaro"} element={<Shartnoma/>}/>
                       <Route path={"xorij"} element={<Xorij/>}/>
+                  </Route>
+                  <Route path={"media"} element={<Media/>}>
+                      <Route path={"video"} element={<Video/>} />
+                      <Route path={"audio"} element={<Audio/>}/>
+                      <Route path={"raddiya"} element={<RaddiyaVd/>}/>
                   </Route>
               </Route>
               <Route path={"/news/:uuid"} element={<Newss/>}/>

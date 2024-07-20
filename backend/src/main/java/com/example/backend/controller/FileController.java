@@ -82,7 +82,6 @@ public class FileController {
     }
     @GetMapping("/pdf/{id}")
     public ResponseEntity<InputStreamResource> getPdfFile(@PathVariable UUID id) {
-        // Faylni fayl tizimidan yoki bazadan oling
         File file = getFileById(id);
 
         if (file == null) {

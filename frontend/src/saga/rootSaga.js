@@ -14,6 +14,11 @@ import {allomaSaga} from "./allomaSaga.js";
 import {qabulSaga} from "./qabulSaga.js";
 import {shartnomaSaga} from "./shartnomaSaga.js";
 import {xorijSaga} from "./xorijSaga.js";
+import {videoSaga} from "./videoSaga.js";
+import {audioSaga} from "./audioSaga.js";
+import {raddiyavdSaga} from "./raddiyavdSaga.js";
+import {talabaSaga} from "./talabaSaga.js";
+import {ustozSaga} from "./ustozSaga.js";
 
 
 export default function* rootSaga() {
@@ -31,6 +36,11 @@ export default function* rootSaga() {
         allomaSaga(),
         qabulSaga(),
         shartnomaSaga(),
-        xorijSaga()
+        xorijSaga(),
+        videoSaga(),
+        audioSaga(),
+        raddiyavdSaga(),
+        talabaSaga(),
+        ustozSaga()
     ]);
 }

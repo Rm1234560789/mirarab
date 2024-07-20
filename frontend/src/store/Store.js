@@ -17,6 +17,11 @@ import allomaReducer from "../reducer/allomaReducer.js";
 import qabulReducer from "../reducer/qabulReducer.js";
 import shartnomaReducer from "../reducer/shartnomaReducer.js";
 import xorijReducer from "../reducer/xorijReducer.js";
+import videoReducer from "../reducer/videoReducer.js";
+import audioReducer from "../reducer/audioReducer.js";
+import raddiyavdReducer from "../reducer/raddiyavdReducer.js";
+import ustozReducer from "../reducer/ustozReducer.js";
+import talabaReducer from "../reducer/talabaReducer.js";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -34,7 +39,12 @@ const rootReducer = combineReducers({
     allomaReducer:allomaReducer.reducer,
     qabulReducer:qabulReducer.reducer,
     shartnomaReducer:shartnomaReducer.reducer,
-    xorijReducer:xorijReducer.reducer
+    xorijReducer:xorijReducer.reducer,
+    videoReducer:videoReducer.reducer,
+    audioReducer:audioReducer.reducer,
+    raddiyavdReducer:raddiyavdReducer.reducer,
+    ustozReducer:ustozReducer.reducer,
+    talabaReducer:talabaReducer.reducer,
 })
 
 
