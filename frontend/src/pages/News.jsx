@@ -245,7 +245,8 @@ function News() {
                 <div>
                     <form className="form" onSubmit={handleSubmit(mySubmit)}>
                         <input {...register("firstName")} type="text" placeholder="Ism kiriting" className="input"/>
-                        <input {...register("lastName")} type="text" placeholder="Familiyani kiriting" className="input"/>
+                        <input {...register("lastName")} type="text" placeholder="Familiyani kiriting"
+                               className="input"/>
                         <input {...register("title")} type="text" placeholder="Izoh yozing" className="input"/>
                         <button className="submit-button">Yuborish</button>
                     </form>
