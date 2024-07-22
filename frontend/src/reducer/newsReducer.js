@@ -55,14 +55,16 @@ const slice = createSlice({
             state.info=action.payload
         },
         getInfo:()=>{
-        }
+        },
+        postIzoh(){}
     }
 });
 
 export const {
     getNews, getNewsSucces, getIzohlar, getIzohlarSucces, getManaviyat, getManaviyatSucces,
     getProfessor, getProfessorSucces, getMaqola, getMaqolaSucces, getMadrasa, getMadrasaSucces,
-    saveNews, setDisplayImg, setImg, deleteNews, updateNews, getInfo,getInfoSuccess
+    saveNews, setDisplayImg, setImg, deleteNews, updateNews, getInfo,getInfoSuccess,
+    postIzoh
 } = slice.actions;
 
 export default slice;

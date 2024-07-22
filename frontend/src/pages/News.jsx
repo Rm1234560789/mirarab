@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getIzohlar, getMadrasa, getManaviyat, getMaqola, getNews, getProfessor} from '../reducer/newsReducer';
+import {getIzohlar, getMadrasa, getManaviyat, getMaqola, getNews, getProfessor, postIzoh} from '../reducer/newsReducer';
 import {getVideo} from "../reducer/vdReducer.js";
 import './News.css';
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
+import {useForm} from "react-hook-form";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import moon from "../assets/Moon.svg"
@@ -19,6 +20,7 @@ function News() {
     const {news, izohlar, maqola, madrasa, manaviyat, professor} = useSelector(state => state.newsReducer);
     const {video} = useSelector(state => state.vdReducer);
     const dispatch = useDispatch();
+    const {register,reset,handleSubmit} = useForm()
 
 
     useEffect(() => {
@@ -75,7 +77,7 @@ function News() {
         }
     };
 
-    function handleNavigate(uuid){
+    function handleNavigate(uuid) {
 
         navigate(`/news/${uuid}`)
     }
@@ -95,14 +97,20 @@ function News() {
         return arr;
     }
 
+    function mySubmit(params){
+        dispatch(postIzoh({data:params,reset:reset}))
+        console.log(params)
+    }
+
     return (
         <div className="homeMain">
             <Header/>
 
             <div className={"wrapper"}>
                 {
-                    video.map((video) => <video className={"rasm"}
-                                                src={`http://localhost:8080/api/files/video?name=${video.url}`}
+                    video.map((video) =>
+                        <video className={"rasm"}
+                        src={`http://localhost:8080/api/files/video?name=${video.url}`}
                     />)
                 }
                 <div className={"text"}>
@@ -111,12 +119,12 @@ function News() {
                 <div className={"cards"}>
                     {
                         news.map((item, index) =>
-                            <div onClick={() => handleNavigate(item.id)} key={index} className="card">
+                            <div onClick={()=>handleNavigate(item.id)} key={index} className="card">
                                 <div className="card-img">
                                     <img src={`http://localhost:8080/api/files/img?name=${item.img}`} alt=""/>
                                 </div>
                                 <div className="card-footer">
-                                    <div style={{paddingBlock: "14px"}}>
+                                    <div style={{paddingBlock:"14px"}}>
                                         <h5>{item.description}</h5>
                                         <p className={"p"}>{item.date.toString().substring(0, 10)}</p>
                                     </div>
@@ -131,7 +139,7 @@ function News() {
                 <div className={"cards"}>
                     {
                         maqola.map((item2, index) =>
-                            <div onClick={() => handleNavigates(item2.id)} key={index} className="card1">
+                            <div onClick={()=>handleNavigates(item2.id)} key={index} className="card1">
                                 <div className="card-img1">
                                     <img src={`http://localhost:8080/api/files/img?name=${item2.img}`} alt=""/>
                                 </div>
@@ -150,12 +158,12 @@ function News() {
                         {
                             manaviyat.map((item3, index) =>
                                 <div className={"pdfDiv"} key={index}>
-                                    <div className="card-img2">
-                                        <img src={`http://localhost:8080/api/files/img/pdf`} alt=""/>
+                                    <div  className="card-img2">
+                                        <img  src={`http://localhost:8080/api/files/img/pdf`} alt=""/>
                                     </div>
-                                    <div id="pdfContent" className={"card-footer2"}>
+                                    <div id="pdfContent"  className={"card-footer2"}>
                                         <p>{item3.name}</p>
-                                        <span onClick={() => getPdfFromDatabase(item3.id)}>Pdfni yuklash</span>
+                                        <span onClick={()=>getPdfFromDatabase(item3.id)}>Pdfni yuklash</span>
                                     </div>
                                 </div>)
                         }
@@ -234,14 +242,20 @@ function News() {
 
                 </div>
 
-                <div className="form">
-                    <input type="text" placeholder="Ism kiriting" className="input"/>
-                    <input type="text" placeholder="Familiyani kiriting" className="input"/>
-                    <input type="text" placeholder="Izoh yozing" className="input"/>
-                    <button className="submit-button">Yuborish</button>
+                <div>
+                    <form className="form" onSubmit={handleSubmit(mySubmit)}>
+                        <input {...register("firstName")} type="text" placeholder="Ism kiriting" className="input"/>
+                        <input {...register("lastName")} type="text" placeholder="Familiyani kiriting"
+                               className="input"/>
+                        <input {...register("title")} type="text" placeholder="Izoh yozing" className="input"/>
+                        <button className="submit-button">Yuborish</button>
+                    </form>
                 </div>
             </div>
-            <Footer/>
+
+            <div style={{marginTop: "30px"}}>
+                <Footer/>
+            </div>
         </div>
     );
 }

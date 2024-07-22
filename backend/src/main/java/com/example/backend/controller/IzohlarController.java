@@ -1,11 +1,10 @@
 package com.example.backend.controller;
 
+import com.example.backend.dto.IzohDto;
 import com.example.backend.service.IzohlarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/izohlar")
@@ -15,5 +14,9 @@ public class IzohlarController {
     @GetMapping
     public HttpEntity<?> getAllIzohlar() {
         return izohlarService.getIzohlar();
+    }
+    @PostMapping
+    public void postIzoh(@RequestBody IzohDto izohDto){
+        izohlarService.postIzoh(izohDto);
     }
 }

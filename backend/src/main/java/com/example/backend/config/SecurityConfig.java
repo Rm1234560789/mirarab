@@ -35,7 +35,7 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable)
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.POST, "/auth/login","/maqola","/manaviyat","/madrasahq","/professor","/qadam").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/auth/login","/maqola","/manaviyat","/madrasahq","/professor","/qadam","/izohlar").permitAll()
                         .requestMatchers("/api/files/pdf/{id}").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/files/img","/api/files/video","/video","/news","/rahbariyat","/bux","/obida","/alloma","/qabul","/xalqaro","/xorij","/vd","/audio","/raddiya","/ustoz","/talaba").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/files/img","/manaviyat","/maqola","/madrasahq","/professor","/izohlar","/news","api/files/img/pdf","/bux","/obida","/qadam","/alloma","/qabul","/xalqaro","/xorij","/vd","/audio","/raddiya","/talaba","/ustoz").permitAll()

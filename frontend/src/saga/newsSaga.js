@@ -17,7 +17,7 @@ import {
     deleteNews,
     updateNews,
     getInfo,
-    getInfoSuccess, setImg
+    getInfoSuccess, setImg, postIzoh
 } from "../reducer/newsReducer";
 
 export function* workGetNews() {
@@ -124,7 +124,7 @@ export function* workDeleteNews(action) {
 export function* workUpdateNews(action) {
     console.log(action.payload)
     let data = action.payload;
-    if (action.payload.edit===true){
+    if (action.payload.edit === true) {
         console.log("editTrue")
         const form = new FormData();
         form.append("file", action.payload.img);
@@ -147,8 +147,6 @@ export function* workUpdateNews(action) {
 }
 
 
-
-
 export function* getNewsById(action) {
 
     let id = action.payload;
@@ -157,8 +155,18 @@ export function* getNewsById(action) {
         url: `http://localhost:8080/news/${id}`,
         method: "GET"
     }))
-    console.log(res.data)
     yield put(getInfoSuccess(res.data))
+
+}
+
+export function* workPostIzoh(action) {
+    console.log(action.payload)
+    const res = yield call(() => axios({
+        url: `http://localhost:8080/izohlar`,
+        method: "POST",
+        data: action.payload.data
+    }).then(()=>{action.payload.reset()}))
+    yield put(getIzohlar())
 
 }
 
@@ -173,4 +181,5 @@ export function* newsSaga() {
     yield takeLatest(deleteNews().type, workDeleteNews);
     yield takeLatest(updateNews().type, workUpdateNews);
     yield takeLatest(getInfo().type, getNewsById);
+    yield takeLatest(postIzoh().type, workPostIzoh);
 }
