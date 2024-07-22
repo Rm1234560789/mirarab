@@ -25,7 +25,18 @@ function AdminHeader() {
                 <div className="wrapper3">
                     <p onClick={() => navigate("oliy")}>Олий мадраса</p>
                     <p onClick={() => navigate("yangiliklar")}>Янгиликлар</p>
-                    <p onClick={() => navigate("maqolalar")}>Мақолалар</p>
+                    <div className="dropdown">
+                        <p className="dropdown-button">
+                            Maqolalar
+                        </p>
+                        <div className="dropdown-menu">
+                            <button onClick={() => navigate("maqola/ustoz")}>Ustozlar_Minbari</button>
+                            <button onClick={() => navigate("maqola/talaba")}>Talaba_Minbari</button>
+                            <button onClick={() => navigate("maqola/maqolas")}>Ilmiy_Maqola</button>
+                            <button onClick={() => navigate("media/raddiyas")}>Raddiya</button>
+                            <button onClick={() => navigate("media/turli_mavzu")}>Turli_Mavzu</button>
+                        </div>
+                    </div>
                     <div className="dropdown">
                         <p className="dropdown-button">
                             Media
