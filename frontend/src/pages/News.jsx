@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getIzohlar, getMadrasa, getManaviyat, getMaqola, getNews, getProfessor} from '../reducer/newsReducer';
 import {getVideo} from "../reducer/vdReducer.js";
@@ -7,12 +7,19 @@ import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import moon from "../assets/Moon.svg"
+import leftArrow from "../assets/Group 82.svg"
+import rightArrow from "../assets/Group 85.svg"
+
 
 function News() {
     const navigate = useNavigate();
     const {news, izohlar, maqola, madrasa, manaviyat, professor} = useSelector(state => state.newsReducer);
     const {video} = useSelector(state => state.vdReducer);
     const dispatch = useDispatch();
+
 
     useEffect(() => {
         dispatch(getNews());
@@ -23,7 +30,33 @@ function News() {
         dispatch(getIzohlar());
         dispatch(getVideo())
     }, [dispatch]);
+    const [fade, setFade] = useState(false);
 
+    const handleClick = () => {
+        setTimeout(() => {
+            setFade(true);
+        }, 2000); // 2 seconds delay
+    };
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const prevSlide = () => {
+        handleClick();
+        let newIndex = 0;
+       if(currentIndex!==0){
+           newIndex =  currentIndex - 3;
+       }
+
+        setCurrentIndex(newIndex);
+    };
+
+    const nextSlide = () => {
+      handleClick();
+        let newIndex = currentIndex === izohlar.length - 3 ? 0 : currentIndex + 3;
+        if (currentIndex===izohlar.length - 1) {
+            console.log("Aaaaaaaaaaaa")
+            newIndex=0;
+        }
+        setCurrentIndex(newIndex);}
 
     const getPdfFromDatabase = async (id) => {
         try {
@@ -51,15 +84,25 @@ function News() {
         navigate(`/maqola/${uuid}`)
     }
 
+    function drawCard() {
+
+        let arr=[]
+        arr=izohlar.slice(currentIndex,currentIndex+3)
+
+            console.log(arr)
+            console.log(currentIndex)
+
+        return arr;
+    }
+
     return (
         <div className="homeMain">
             <Header/>
 
             <div className={"wrapper"}>
                 {
-                    video.map((video) =>
-                        <video className={"rasm"}
-                        src={`http://localhost:8080/api/files/video?name=${video.url}`}
+                    video.map((video) => <video className={"rasm"}
+                                                src={`http://localhost:8080/api/files/video?name=${video.url}`}
                     />)
                 }
                 <div className={"text"}>
@@ -68,12 +111,12 @@ function News() {
                 <div className={"cards"}>
                     {
                         news.map((item, index) =>
-                            <div onClick={()=>handleNavigate(item.id)} key={index} className="card">
+                            <div onClick={() => handleNavigate(item.id)} key={index} className="card">
                                 <div className="card-img">
                                     <img src={`http://localhost:8080/api/files/img?name=${item.img}`} alt=""/>
                                 </div>
                                 <div className="card-footer">
-                                    <div style={{paddingBlock:"14px"}}>
+                                    <div style={{paddingBlock: "14px"}}>
                                         <h5>{item.description}</h5>
                                         <p className={"p"}>{item.date.toString().substring(0, 10)}</p>
                                     </div>
@@ -88,7 +131,7 @@ function News() {
                 <div className={"cards"}>
                     {
                         maqola.map((item2, index) =>
-                            <div onClick={()=>handleNavigates(item2.id)} key={index} className="card1">
+                            <div onClick={() => handleNavigates(item2.id)} key={index} className="card1">
                                 <div className="card-img1">
                                     <img src={`http://localhost:8080/api/files/img?name=${item2.img}`} alt=""/>
                                 </div>
@@ -107,12 +150,12 @@ function News() {
                         {
                             manaviyat.map((item3, index) =>
                                 <div className={"pdfDiv"} key={index}>
-                                    <div  className="card-img2">
-                                        <img  src={`http://localhost:8080/api/files/img/pdf`} alt=""/>
+                                    <div className="card-img2">
+                                        <img src={`http://localhost:8080/api/files/img/pdf`} alt=""/>
                                     </div>
-                                    <div id="pdfContent"  className={"card-footer2"}>
+                                    <div id="pdfContent" className={"card-footer2"}>
                                         <p>{item3.name}</p>
-                                        <span onClick={()=>getPdfFromDatabase(item3.id)}>Pdfni yuklash</span>
+                                        <span onClick={() => getPdfFromDatabase(item3.id)}>Pdfni yuklash</span>
                                     </div>
                                 </div>)
                         }
@@ -142,40 +185,55 @@ function News() {
                         )
                     }
                 </div>
-                <div className={"text"}>
+                <div className={"professors"}>
                     <h1>Professorlarimiz</h1>
+                    <div className={"cards4"}>
+
+                       {
+                            professor.map((item4, index) =>
+                                <div key={index} className={"profCard"}>
+                                    <div className={"profCardImg"}>
+                                        <img src={`http://localhost:8080/api/files/img?name=${item4.img}`} alt=""/>
+                                    </div>
+                                    <div className={"profCardText"}>
+                                        <p>{item4.name}</p>
+                                        <h3>{item4.title}</h3>
+                                    </div>
+                                </div>)
+                        }
+                    </div>
+
+
                 </div>
-                <div className={"cards4"}>
-                    {
-                        professor.map((item4, index) =>
-                            <div key={index}>
-                                <div className={"card-img4"}>
-                                    <img src={`http://localhost:8080/api/files/img?name=${item4.img}`} alt=""/>
-                                </div>
-                                <div className={"card-footer4"}>
-                                    <h3>{item4.name}</h3>
-                                    <p>{item4.title}</p>
-                                </div>
-                            </div>)
-                    }
-                </div>
-                <div className={"text"}>
-                    <h1>Izohlar</h1>
-                </div>
-                <div className={"cards5"}>
-                    {
-                        izohlar.map((item5, index) =>
-                            <div key={index}>
-                                <div className={"card5"}>
-                                    <div>
-                                        <h2>{item5.firstname}{item5.lastname}</h2>
-                                        <p>{item5.title}</p>
+                <div style={{
+
+                }} className={"izohlarMain"}>
+                    <h1 style={{textAlign:"center"}}>Izohlar</h1>
+                    <div className={"carouselCont"}>
+                       <img style={{cursor:currentIndex===0?"not-allowed":"pointer"}} onClick={prevSlide} src={leftArrow}/>
+                        <div className={"carouselCardCont"}>
+                            {drawCard().map((item, index) =><div className={"crCard"}>
+                                <div className={"mirArab"}>
+                                    <div className={"mirArabLeft"}>
+                                        <img src={moon} alt={"not"}/>
+                                    </div>
+                                    <div className={"mirArabRight"}>
+                                        <p>Mir Arab</p>
+                                        <p>Oliy Madrasasi</p>
                                     </div>
                                 </div>
-                            </div>
-                        )
-                    }
+                                <div style={{paddingInline:"24px",marginTop:"17px"}}>
+                                    <p className={"commentName"}>{item.firstname}</p>
+                                    <p className={"commentDesc"}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pulvinar lorem felis</p>
+                                </div>
+                            </div>)}
+                        </div>
+                       <img style={{cursor:"pointer"}} onClick={nextSlide} src={rightArrow}/>
+                    </div>
+
+
                 </div>
+
                 <div className="form">
                     <input type="text" placeholder="Ism kiriting" className="input"/>
                     <input type="text" placeholder="Familiyani kiriting" className="input"/>
