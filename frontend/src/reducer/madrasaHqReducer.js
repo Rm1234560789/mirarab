@@ -2,8 +2,8 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
     madrasa: [],
-    info:{}
-
+    info:{},
+    selectedMadrasa:{}
 }
 const slice = createSlice({
     name: "madrasa",
@@ -15,11 +15,17 @@ const slice = createSlice({
         getInfo:() => {},
         getInfoSucces: (state, action) => {
             state.info=action.payload
+        },
+        fetchSelectedMadrasa(){},
+        fetchSelectedMadrasaSuccess(state,action){
+            state.selectedMadrasa = action.payload
         }
     }
 });
 
 export const {
-   saveMadrasa,deleteMadrasa,updateMadrasa,getInfo,getInfoSucces
+   saveMadrasa,deleteMadrasa,updateMadrasa,getInfo,getInfoSucces,
+    fetchSelectedMadrasa,
+    fetchSelectedMadrasaSuccess
 } = slice.actions;
 export default slice;

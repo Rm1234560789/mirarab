@@ -1,8 +1,14 @@
-import { call, takeLatest, put } from "redux-saga/effects";
+import {call, takeLatest, put} from "redux-saga/effects";
 import axios from "axios";
 import {getMadrasa, setImg} from "../reducer/newsReducer.js";
-import {deleteMadrasa, saveMadrasa, updateMadrasa,getInfo,getInfoSucces} from "../reducer/madrasaHqReducer.js";
-
+import {
+    deleteMadrasa,
+    saveMadrasa,
+    updateMadrasa,
+    getInfo,
+    getInfoSucces,
+    fetchSelectedMadrasa, fetchSelectedMadrasaSuccess
+} from "../reducer/madrasaHqReducer.js";
 
 
 export function* workPostMad(action) {
@@ -36,7 +42,7 @@ export function* workDeleteMad(action) {
 export function* workUpdateMad(action) {
     console.log(action.payload)
     let data = action.payload;
-    if (action.payload.edit===true){
+    if (action.payload.edit === true) {
         console.log("editTrue")
         const form = new FormData();
         form.append("file", action.payload.img);
@@ -73,10 +79,23 @@ export function* getMadrasaById(action) {
 }
 
 
+export function* fetchMadrasaLifeById(action) {
+    try {
+        const res = yield call(() => axios({
+            url: `http://localhost:8080/madrasahq/${action.payload}`,
+            method: "GET"
+        }))
+        yield put(fetchSelectedMadrasaSuccess(res.data))
+    } catch (e) {
+        console.log(e.message)
+    }
+}
+
 
 export function* madrasaHqSaga() {
-    yield takeLatest(saveMadrasa().type,workPostMad);
-    yield takeLatest(deleteMadrasa().type,workDeleteMad);
-    yield takeLatest(updateMadrasa().type,workUpdateMad);
-    yield takeLatest(getInfo().type,getMadrasaById)
+    yield takeLatest(saveMadrasa().type, workPostMad);
+    yield takeLatest(deleteMadrasa().type, workDeleteMad);
+    yield takeLatest(updateMadrasa().type, workUpdateMad);
+    yield takeLatest(getInfo().type, getMadrasaById)
+    yield takeLatest(fetchSelectedMadrasa().type, fetchMadrasaLifeById)
 }

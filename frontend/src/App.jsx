@@ -28,48 +28,53 @@ import Video from "./pages/media/Video.jsx";
 import Media from "./pages/media/Media.jsx";
 import RaddiyaVd from "./pages/media/RaddiyaVd.jsx";
 import Audio from "./pages/media/Audio.jsx";
+import MadrasaHayoti from "./pages/MadrasaHayoti.jsx";
+import RahbariyatUser from "./pages/RahbariyatUser.jsx";
 
 function App() {
 
-  return (
-      <div>
-          <Routes>
-              <Route path={"/admin"} element={<Admin/>}>
-                  <Route path={"bosh"} element={<BoshSahifa/>}>
-                      <Route path={"video"} element={<BoshVideo/>}/>
-                      <Route path={"yangilik"} element={<BoshYangilik/>}/>
-                      <Route path={"maqola"} element={<BoshMaqola/>}/>
-                      <Route path={"manaviyat"} element={<BoshManaviyat/>}/>
-                      <Route path={"madrasa"} element={<BoshMadrasa/>}/>
-                      <Route path={"professor"} element={<BoshProfessor/>}/>
-                      <Route path={"izohlar"} element={<BoshIzohlar/>}/>
-                  </Route>
-                  <Route path={"bux"} element={<Buxoro/>}>
-                      <Route path={"islom"} element={<Islom/>}/>
-                      <Route path={"obida"} element={<Obida/>}/>
-                      <Route path={"qadam"} element={<Qadam/>}/>
-                      <Route path={"alloma"} element={<Alloma/>}/>
-                  </Route>
-                  <Route path={"oliy"} element={<OliyMadrasa/>}/>
-                  <Route path={"qabul"} element={<Qabul/>}/>
-                  <Route path={"xalqaro"} element={<Xalqaro/>}>
-                      <Route path={"xalqaro"} element={<Shartnoma/>}/>
-                      <Route path={"xorij"} element={<Xorij/>}/>
-                  </Route>
-                  <Route path={"media"} element={<Media/>}>
-                      <Route path={"video"} element={<Video/>} />
-                      <Route path={"audio"} element={<Audio/>}/>
-                      <Route path={"raddiya"} element={<RaddiyaVd/>}/>
-                  </Route>
-              </Route>
-              <Route path={"/news/:uuid"} element={<Newss/>}/>
-              <Route path={"/"}element={<News/>}/>
-              <Route path={"/rahbariyat"} element={<Rahbariyat/>}/>
-              <Route path={"/maqola/:uuid"}element={<Maqolas/>}/>
-              <Route path={"/madrasa/:uuid"}element={<MadrasaHq/>}/>
-          </Routes>
-      </div>
-  )
+    return (
+        <div>
+            <Routes>
+                <Route path={"/rahbariyatUser"} element={<RahbariyatUser/>}/>
+
+                <Route path={"/admin"} element={<Admin/>}>
+                    <Route path={"bosh"} element={<BoshSahifa/>}>
+                        <Route path={"video"} element={<BoshVideo/>}/>
+                        <Route path={"yangilik"} element={<BoshYangilik/>}/>
+                        <Route path={"maqola"} element={<BoshMaqola/>}/>
+                        <Route path={"manaviyat"} element={<BoshManaviyat/>}/>
+                        <Route path={"madrasa"} element={<BoshMadrasa/>}/>
+                        <Route path={"professor"} element={<BoshProfessor/>}/>
+                        <Route path={"izohlar"} element={<BoshIzohlar/>}/>
+                    </Route>
+                    <Route path={"bux"} element={<Buxoro/>}>
+                        <Route path={"islom"} element={<Islom/>}/>
+                        <Route path={"obida"} element={<Obida/>}/>
+                        <Route path={"qadam"} element={<Qadam/>}/>
+                        <Route path={"alloma"} element={<Alloma/>}/>
+                    </Route>
+                    <Route path={"oliy"} element={<OliyMadrasa/>}/>
+                    <Route path={"qabul"} element={<Qabul/>}/>
+                    <Route path={"xalqaro"} element={<Xalqaro/>}>
+                        <Route path={"xalqaro"} element={<Shartnoma/>}/>
+                        <Route path={"xorij"} element={<Xorij/>}/>
+                    </Route>
+                    <Route path={"media"} element={<Media/>}>
+                        <Route path={"video"} element={<Video/>}/>
+                        <Route path={"audio"} element={<Audio/>}/>
+                        <Route path={"raddiya"} element={<RaddiyaVd/>}/>
+                    </Route>
+                </Route>
+                <Route path={"/news/:uuid"} element={<Newss/>}/>
+                <Route path={"/"} element={<News/>}/>
+                <Route path={"/rahbariyat"} element={<Rahbariyat/>}/>
+                <Route path={"/maqola/:uuid"} element={<Maqolas/>}/>
+                <Route path={"/madrasa/:uuid"} element={<MadrasaHq/>}/>
+                <Route path={"/madrasa/hayot/:id"} element={<MadrasaHayoti/>}/>
+            </Routes>
+        </div>
+    )
 }
 
 export default App

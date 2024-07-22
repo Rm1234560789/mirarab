@@ -26,10 +26,8 @@ public class MadrasaHqController {
     @GetMapping("/{id}")
     public HttpEntity<?> getNewsById(@PathVariable UUID id) {
        Madrasa_hq madrasa_hq = madrasaHq.findById(id).orElseThrow();
-        System.out.println(madrasa_hq);
-        return ResponseEntity.ok(madrasa_hq);
+       return ResponseEntity.ok(madrasa_hq);
     }
-
     @PostMapping
     public HttpEntity<?> postRahbariyat(@RequestBody MadrasaHqDto madrasaHqDto) {
         return madrasaHqService.postMadrasa(madrasaHqDto);

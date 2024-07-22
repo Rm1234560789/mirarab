@@ -69,6 +69,46 @@ header .headerBottom{
     max-width: 1920px;
     margin: 0 auto;
     height: 140px;
+}
 
+.ul li {
+    position: relative;
+}
 
+.dropdown2 {
+    width: 200px;
+    display: none;
+    position: absolute;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 10;
+    margin-top: 40px;
+}
+
+.has-dropdown:hover .dropdown2 {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.has-dropdown:hover {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dropdown2 button {
+    background-color: #fff;
+    border: none;
+    text-align: left;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.dropdown2 p:hover {
+    background-color: #f0f0f0;
+    border-radius: 5px;
 }
