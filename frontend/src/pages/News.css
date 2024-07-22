@@ -286,22 +286,260 @@ body {
 }
 
 
+.professors{
+    max-width: 1500px;
+
+    margin:97px auto 0px auto;
+
+}
+.professors h1{
+    text-align: center;
+    color: #0E5344;
+}
 .cards4 {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     max-width: 1508px;
     margin: 0 auto;
-}
 
-.cards4 > div {
-    overflow: hidden;
-    width: 377px;
+
+
+}
+.profCard{
+    max-width: 377px;
     height: 313px;
+
     display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-block: 50px;
+
+}
+.profCardImg{
+    max-width: 143px;
+    height: 173px;
+
+}
+.profCardImg img{
+    width: 100%;
+    height: 100%;
+}
+.profCardText{
+    width: 100%;
+    height: 139px;
+
+    text-align: center;
+    padding-inline: 10px;
+    overflow: hidden;
+
+
+
+}
+.profCardText h3{
+    word-break: break-all;
+    font-family: Playfair Display;
+    font-size: 20.07px;
+    font-weight: 700;
+    line-height: 26.75px;
+    text-align: center;
+    color: #0E5344;
+
+}
+.profCardText p{
+    font-family: Playfair Display;
+    font-size: 16.05px;
+    font-weight: 700;
+    line-height: 21.4px;
+    text-align: center;
+    color: #0E5344;
+    margin-top: 10px;
+
+}
+/*Carousel*/
+.carousel-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-color: #0E5344;
+}
+.carousel {
+    display: flex;
+    overflow: hidden;
+}
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.card {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    width: 391px;
+    height: 200px; /* Adjust height as needed */
+    flex: none; /* Prevents flex items from shrinking or growing */
+}
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+.nav-button.left {
+    left: 0;
+}
+.nav-button.right {
+    right: 0;
+}
+.izohlarMain{
+    height: 346px;
+
+    max-width: 1500px;
+    margin: 60px  auto 0px auto;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between
+}
+.izohlarMain h3{
+    color: #0E5344;
+    font-size: 33px;
+    font-weight: 700;
+    line-height: 44px;
+    text-align: center;
+
+}
+.carouselCont{
+    width: 100%;
+
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.carouselCardCont{
+    width: 1380px;
+
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 75px;
+    justify-content: space-between!important;
+    padding-inline: 25px;
+
+}
+.crCard{
+    max-width: 391px;
+    height: 236px;
+    background-color:#43AB7BE5;
+    border-radius: 26px;
+
+
+}
+.mirArab{
+    max-width: 195px;
+    height: 33px;
+
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.mirArabLeft{
+    width: 33px;
+    height: 31px;
+
+
+}
+.mirArabLeft img{
+    width: 100%;
     flex-direction: column;
     align-items: center;
 }
+.mirArabRight{
+    width: 152px;
+    height: 32px;
+
+
+
+}
+.fade-target {
+    transition: opacity 2s ease-out;
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+}
+.mirArabRight p{
+    font-family: Rakkas;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 15px;
+    text-align: left;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+.commentName{
+    font-family: Playfair Display;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: center;
+    color: black;
+    height: 35px;
+    margin: 0;
+    overflow: hidden;
+
+}
+.commentDesc{
+    font-family: Playfair Display;
+    font-size: 20.07px;
+    font-weight: 500;
+    line-height: 26.75px;
+    text-align: center;
+    color: white;
+    height: 110px;
+
+    overflow: hidden;
+
+}
+
+.crCard h3{
+    text-align: center;
+
+}
+
+/*.carousel-button {*/
+/*    padding: 10px 20px;*/
+/*    margin: 20px;*/
+/*    font-size: 16px;*/
+/*    cursor: pointer;*/
+/*    top: 50%;*/
+/*    transform: translateY(-50%);*/
+/*}*/
+
+/*#prevBtn {*/
+/*    left: 0;*/
+/*}*/
+
+/*#nextBtn {*/
+/*    right: 0;*/
+/*}*/
+
+/*-------------------*/
+
 
 .card-img4 img {
     align-items: center;

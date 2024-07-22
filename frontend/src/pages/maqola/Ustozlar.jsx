@@ -1,20 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {useForm} from 'react-hook-form';
 import {useDispatch, useSelector} from 'react-redux';
-import {
-    deleteRahbariyat,
-    getRahbariyat,
-    saveRahbariyat,
-    updateRahbariyat,
-} from '../reducer/rahbariyatReducer.js';
-import {setDisplayImg, setImg} from '../reducer/newsReducer.js';
-import AdminHeader from "../components/AdminHeader.jsx";
+import {setDisplayImg, setImg} from '../../reducer/newsReducer.js';
 import {deleteU, get, saveU, updateU} from "../../reducer/ustozReducer.js";
 
 function Rahbariyat() {
     const {register, reset, handleSubmit, setValue} = useForm();
     const dispatch = useDispatch();
-    const {rahbariyat} = useSelector((state) => state.rahbariyatReducer);
+    const {ustoz} = useSelector((state) => state.ustozReducer);
     const {imgInp} = useSelector((state) => state.newsReducer);
     const displayImg = useSelector((state) => state.newsReducer.displayImg);
     const [isEdit, setIsEdit] = useState('');
@@ -43,7 +36,7 @@ function Rahbariyat() {
         reset();
         setIsEdit('');
         setCurrentId(null);
-        setSelectedFile(null); // Reset selected file state
+        setSelectedFile(null);
     }
 
     function handleSetImg(e) {
@@ -68,8 +61,8 @@ function Rahbariyat() {
         setSelectedFile(item.img.substring(36))
         setIsEdit(true);
         setCurrentId(item.id);
-        setValue('title', item.title);
         setValue('name', item.name);
+        setValue('description', item.description);
         setIsEdit(item);
         dispatch(setDisplayImg(`http://localhost:8080/api/files/img?name=${item.img}`));
     }
@@ -78,7 +71,7 @@ function Rahbariyat() {
 
     return (
         <div className={'wrapper'}>
-            <AdminHeader/>
+            <h1 className={"text"}>Ustozlar_Minbari</h1>
             <div className={"d-grid "}>
                 <form
                     id="form"
@@ -93,13 +86,13 @@ function Rahbariyat() {
                             type="file"
                             defaultValue={selectedFile}
                         />
-                        <input style={{width: "590px", height: "45px"}} {...register('title')} type="text"
-                               placeholder="Title"/>
+                        <input style={{width: "590px", height: "45px"}} {...register('name')} type="text"
+                               placeholder="Name"/>
                     </div>
 
                     <div>
-                        <textarea {...register('name')} style={{height: "216px", width: "100%"}} type="text"
-                                  placeholder="Name"/>
+                        <textarea {...register('description')} style={{height: "216px", width: "100%"}} type="text"
+                                  placeholder="Description"/>
                     </div>
 
                     <button
@@ -114,17 +107,17 @@ function Rahbariyat() {
             <table className={'table table-bordered'}>
                 <thead className="thead-dark">
                 <tr>
-                    <th>Title</th>
                     <th>Name</th>
+                    <th>Description</th>
                     <th>Img</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                {rahbariyat.map((item, index) => (
+                {ustoz.map((item, index) => (
                     <tr key={index}>
-                        <td>{item.title}</td>
                         <td>{item.name}</td>
+                        <td>{item.description}</td>
                         <td>
                             <img
                                 width={100}

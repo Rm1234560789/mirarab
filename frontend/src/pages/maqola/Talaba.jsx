@@ -1,19 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {useForm} from 'react-hook-form';
 import {useDispatch, useSelector} from 'react-redux';
-import {
-    deleteRahbariyat,
-    getRahbariyat,
-    saveRahbariyat,
-    updateRahbariyat,
-} from '../reducer/rahbariyatReducer.js';
-import {setDisplayImg, setImg} from '../reducer/newsReducer.js';
-import AdminHeader from "../components/AdminHeader.jsx";
+import {setDisplayImg, setImg} from '../../reducer/newsReducer.js';
+import {deleteT, get, saveT, updateT} from "../../reducer/talabaReducer.js";
 
 function Rahbariyat() {
     const {register, reset, handleSubmit, setValue} = useForm();
     const dispatch = useDispatch();
-    const {rahbariyat} = useSelector((state) => state.rahbariyatReducer);
+    const {talaba} = useSelector((state) => state.talabaReducer);
     const {imgInp} = useSelector((state) => state.newsReducer);
     const displayImg = useSelector((state) => state.newsReducer.displayImg);
     const [isEdit, setIsEdit] = useState('');
@@ -21,7 +15,7 @@ function Rahbariyat() {
     const [selectedFile, setSelectedFile] = useState(null);
 
     useEffect(() => {
-        dispatch(getRahbariyat());
+        dispatch(get());
     }, [dispatch]);
 
     function mySubmit(data) {
@@ -34,10 +28,10 @@ function Rahbariyat() {
                 data.edit = true;
                 data.img = imgInp;
             }
-            dispatch(updateRahbariyat(data));
+            dispatch(updateT(data));
         } else {
             data.img = imgInp;
-            dispatch(saveRahbariyat(data));
+            dispatch(saveT(data));
         }
         reset();
         setIsEdit('');
@@ -60,7 +54,7 @@ function Rahbariyat() {
     }
 
     function handleDelete(id) {
-        dispatch(deleteRahbariyat(id));
+        dispatch(deleteT(id));
     }
 
     function handleEdit(item) {
@@ -68,7 +62,7 @@ function Rahbariyat() {
         setIsEdit(true);
         setCurrentId(item.id);
         setValue('title', item.title);
-        setValue('name', item.name);
+        setValue('description', item.description);
         setIsEdit(item);
         dispatch(setDisplayImg(`http://localhost:8080/api/files/img?name=${item.img}`));
     }
@@ -77,7 +71,7 @@ function Rahbariyat() {
 
     return (
         <div className={'wrapper'}>
-            <AdminHeader/>
+            <h1 className={"text"}>Talaba_Minbari</h1>
             <div className={"d-grid "}>
                 <form
                     id="form"
@@ -97,8 +91,8 @@ function Rahbariyat() {
                     </div>
 
                     <div>
-                        <textarea {...register('name')} style={{height: "216px", width: "100%"}} type="text"
-                                  placeholder="Name"/>
+                        <textarea {...register('description')} style={{height: "216px", width: "100%"}} type="text"
+                                  placeholder="Description"/>
                     </div>
 
                     <button
@@ -114,16 +108,16 @@ function Rahbariyat() {
                 <thead className="thead-dark">
                 <tr>
                     <th>Title</th>
-                    <th>Name</th>
+                    <th>Description</th>
                     <th>Img</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                {rahbariyat.map((item, index) => (
+                {talaba.map((item, index) => (
                     <tr key={index}>
                         <td>{item.title}</td>
-                        <td>{item.name}</td>
+                        <td>{item.description}</td>
                         <td>
                             <img
                                 width={100}

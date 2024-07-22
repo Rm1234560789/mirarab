@@ -30,6 +30,9 @@ import RaddiyaVd from "./pages/media/RaddiyaVd.jsx";
 import Audio from "./pages/media/Audio.jsx";
 import MadrasaHayoti from "./pages/MadrasaHayoti.jsx";
 import RahbariyatUser from "./pages/RahbariyatUser.jsx";
+import Maqola from "./pages/maqola/Maqola.jsx";
+import Ustozlar from "./pages/maqola/Ustozlar.jsx";
+import Talaba from "./pages/maqola/Talaba.jsx";
 
 function App() {
 
@@ -64,6 +67,10 @@ function App() {
                         <Route path={"video"} element={<Video/>}/>
                         <Route path={"audio"} element={<Audio/>}/>
                         <Route path={"raddiya"} element={<RaddiyaVd/>}/>
+                    </Route>
+                    <Route path={"maqola"} element={<Maqola/>}>
+                        <Route path={"ustoz"} element={<Ustozlar/>}/>
+                        <Route path={"talaba"} element={<Talaba/>}/>
                     </Route>
                 </Route>
                 <Route path={"/news/:uuid"} element={<Newss/>}/>
