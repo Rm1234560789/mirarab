@@ -2,7 +2,14 @@ import { call, takeLatest, put } from "redux-saga/effects";
 import axios from "axios";
 import {setImg} from "../reducer/newsReducer.js";
 import {deleteObida, getObida, getObidaSucces, saveObida, updateObida} from "../reducer/obidaReducer.js";
-import {deleteQadam, getQadam, getQadamSucces, saveQadam, updateQadam} from "../reducer/qadamReducer.js";
+import {
+    deleteQadam,
+    getCurrentQadam, getCurrentQadamSucces,
+    getQadam,
+    getQadamSucces,
+    saveQadam,
+    updateQadam
+} from "../reducer/qadamReducer.js";
 
 
 export function* workGetQadam() {
@@ -70,7 +77,12 @@ export function* workUpdateQadam(action) {
     yield put(getQadam())
     yield put(setImg(""))
 }
+export function* workGetCurrentQadam(action){
+    const res=yield call(()=>axios({url:`http://localhost:8080/qadam/${action.payload}`,method:"GET"}));
+    console.log(res.data)
+    yield put(getCurrentQadamSucces(res.data));
 
+}
 
 
 export function* qadamSaga() {
@@ -78,4 +90,5 @@ export function* qadamSaga() {
     yield takeLatest(saveQadam().type,workPostQadam);
     yield takeLatest(deleteQadam().type,workDeleteQadam);
     yield takeLatest(updateQadam().type,workUpdateQadam);
+    yield takeLatest(getCurrentQadam().type,workGetCurrentQadam)
 }

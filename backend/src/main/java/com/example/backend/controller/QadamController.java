@@ -35,4 +35,8 @@ public class QadamController {
     public HttpEntity<?> editObida(@PathVariable UUID id, @RequestBody Qadamlar qadamlar) {
         return qadamService.editQadam(id, qadamlar);
     }
+    @GetMapping("/{id}")
+    public HttpEntity<?> getCurrentQadamjo(@PathVariable UUID id) {
+        return qadamService.getCurrentQadamjo(id);
+    }
 }

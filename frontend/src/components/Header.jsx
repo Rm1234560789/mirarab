@@ -112,7 +112,7 @@ function Header() {
                                 <div className={"dropdown2"}>
                                     <p onClick={() => navigate("")}>Buxoro islom madaniyati poytaxti</p>
                                     <p onClick={() => navigate("")}>Buxoro obidalari</p>
-                                    <p onClick={() => navigate("")}>Muqaddas qadamjolar</p>
+                                    <p onClick={() => navigate("/muqqadas/qadamjolar")}>Muqaddas qadamjolar</p>
                                     <p onClick={() => navigate("")}>Ulug allomalarimiz</p>
                                 </div>
                             </li>

@@ -43,21 +43,33 @@ function News() {
 
     const prevSlide = () => {
         handleClick();
+
         let newIndex = 0;
        if(currentIndex!==0){
            newIndex =  currentIndex - 3;
+       }else if(izohlar.length%3===1){
+           newIndex=izohlar.length-1
+       }else if (izohlar.length%3===2) {
+           newIndex=izohlar.length-2
+       }else {
+           newIndex=izohlar.length-3
        }
 
         setCurrentIndex(newIndex);
     };
 
     const nextSlide = () => {
-      handleClick();
+        handleClick();
         let newIndex = currentIndex === izohlar.length - 3 ? 0 : currentIndex + 3;
-        if (currentIndex===izohlar.length - 1) {
+        if (newIndex>izohlar.length){
+            newIndex = 0;
+        }else if (currentIndex===izohlar.length - 1||currentIndex===izohlar.length||currentIndex>izohlar.length) {
             console.log("Aaaaaaaaaaaa")
             newIndex=0;
         }
+        console.log(newIndex)
+        console.log(izohlar.length)
+
         setCurrentIndex(newIndex);}
 
     const getPdfFromDatabase = async (id) => {
@@ -245,14 +257,43 @@ function News() {
                             <img style={{cursor: "pointer"}} onClick={nextSlide} src={rightArrow}/>
                         </div>
                     </div>
+                </div>
+                <div style={{
+
+                }} className={"izohlarMain"}>
+                    <h1 style={{textAlign:"center"}}>Izohlar</h1>
+                    <div className={"carouselCont"}>
+                       <img style={{cursor:"pointer"}} onClick={prevSlide} src={leftArrow}/>
+                        <div className={"carouselCardCont"}>
+                            {drawCard().map((item, index) =><div className={"crCard"}>
+                                <div className={"mirArab"}>
+                                    <div className={"mirArabLeft"}>
+                                        <img src={moon} alt={"not"}/>
+                                    </div>
+                                    <div className={"mirArabRight"}>
+                                        <p>Mir Arab</p>
+                                        <p>Oliy Madrasasi</p>
+                                    </div>
+                                </div>
+                                <div style={{paddingInline:"24px",marginTop:"17px"}}>
+                                    <p className={"commentName"}>{item.firstname}</p>
+                                    <p className={"commentDesc"}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pulvinar lorem felis</p>
+                                </div>
+                            </div>)}
+                        </div>
+                       <img style={{cursor:"pointer"}} onClick={nextSlide} src={rightArrow}/>
+                    </div>
+
+
+                </div>
+
+                <div>
                     <form className="form" onSubmit={handleSubmit(mySubmit)}>
                         <input {...register("firstName")} type="text" placeholder="Ism kiriting" className="input"/>
                         <input {...register("lastName")} type="text" placeholder="Familiyani kiriting"
                                className="input"/>
                         <input {...register("title")} type="text" placeholder="Izoh yozing" className="input"/>
-                        <div className={"d-flex gap-5"}>
-                            <button className="submit-button">Yuborish</button>
-                        </div>
+                        <button className="submit-button">Yuborish</button>
                     </form>
                 </div>
 

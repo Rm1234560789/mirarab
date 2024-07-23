@@ -11,4 +11,5 @@ public interface QadamService {
     HttpEntity<?>postQadam(Qadamlar qadamlar);
     HttpEntity<?> deleteQadam(UUID id);
     HttpEntity<?> editQadam(UUID id, Qadamlar qadamlar);
+    HttpEntity<?> getCurrentQadamjo(UUID id);
 }

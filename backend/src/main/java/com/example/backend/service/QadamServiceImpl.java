@@ -58,4 +58,10 @@ public class QadamServiceImpl implements QadamService {
             return ResponseEntity.status(404).body(" not found");
         }
     }
+
+    @Override
+    public HttpEntity<?> getCurrentQadamjo(UUID id) {
+        Muqaddas_qadamlar muqaddasQadamlar = qadamRepo.findById(id).orElseThrow();
+        return ResponseEntity.ok(muqaddasQadamlar);
+    }
 }
