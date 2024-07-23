@@ -43,21 +43,33 @@ function News() {
 
     const prevSlide = () => {
         handleClick();
+
         let newIndex = 0;
        if(currentIndex!==0){
            newIndex =  currentIndex - 3;
+       }else if(izohlar.length%3===1){
+           newIndex=izohlar.length-1
+       }else if (izohlar.length%3===2) {
+           newIndex=izohlar.length-2
+       }else {
+           newIndex=izohlar.length-3
        }
 
         setCurrentIndex(newIndex);
     };
 
     const nextSlide = () => {
-      handleClick();
+        handleClick();
         let newIndex = currentIndex === izohlar.length - 3 ? 0 : currentIndex + 3;
-        if (currentIndex===izohlar.length - 1) {
+        if (newIndex>izohlar.length){
+            newIndex = 0;
+        }else if (currentIndex===izohlar.length - 1||currentIndex===izohlar.length||currentIndex>izohlar.length) {
             console.log("Aaaaaaaaaaaa")
             newIndex=0;
         }
+        console.log(newIndex)
+        console.log(izohlar.length)
+
         setCurrentIndex(newIndex);}
 
     const getPdfFromDatabase = async (id) => {
@@ -218,7 +230,7 @@ function News() {
                 }} className={"izohlarMain"}>
                     <h1 style={{textAlign:"center"}}>Izohlar</h1>
                     <div className={"carouselCont"}>
-                       <img style={{cursor:currentIndex===0?"not-allowed":"pointer"}} onClick={prevSlide} src={leftArrow}/>
+                       <img style={{cursor:"pointer"}} onClick={prevSlide} src={leftArrow}/>
                         <div className={"carouselCardCont"}>
                             {drawCard().map((item, index) =><div className={"crCard"}>
                                 <div className={"mirArab"}>
