@@ -9,7 +9,6 @@ import BoshMaqola from "./pages/BoshMaqola.jsx";
 import BoshManaviyat from "./pages/BoshManaviyat.jsx";
 import BoshMadrasa from "./pages/BoshMadrasa.jsx";
 import BoshProfessor from "./pages/BoshProfessor.jsx";
-import BoshIzohlar from "./pages/BoshIzohlar.jsx";
 import Newss from "./pages/Newss.jsx";
 import Rahbariyat from "./pages/Rahbariyat.jsx";
 import Maqolas from "./pages/Maqolas.jsx";
@@ -33,6 +32,7 @@ import RahbariyatUser from "./pages/RahbariyatUser.jsx";
 import Maqola from "./pages/maqola/Maqola.jsx";
 import Ustozlar from "./pages/maqola/Ustozlar.jsx";
 import Talaba from "./pages/maqola/Talaba.jsx";
+import Izohlar from "./pages/Izohlar.jsx";
 
 function App() {
 
@@ -49,7 +49,6 @@ function App() {
                         <Route path={"manaviyat"} element={<BoshManaviyat/>}/>
                         <Route path={"madrasa"} element={<BoshMadrasa/>}/>
                         <Route path={"professor"} element={<BoshProfessor/>}/>
-                        <Route path={"izohlar"} element={<BoshIzohlar/>}/>
                     </Route>
                     <Route path={"bux"} element={<Buxoro/>}>
                         <Route path={"islom"} element={<Islom/>}/>
@@ -72,6 +71,7 @@ function App() {
                         <Route path={"ustoz"} element={<Ustozlar/>}/>
                         <Route path={"talaba"} element={<Talaba/>}/>
                     </Route>
+
                 </Route>
                 <Route path={"/news/:uuid"} element={<Newss/>}/>
                 <Route path={"/"} element={<News/>}/>
@@ -79,6 +79,7 @@ function App() {
                 <Route path={"/maqola/:uuid"} element={<Maqolas/>}/>
                 <Route path={"/madrasa/:uuid"} element={<MadrasaHq/>}/>
                 <Route path={"/madrasa/hayot/:id"} element={<MadrasaHayoti/>}/>
+                <Route path={"/izoh"} element={<Izohlar/>}/>
             </Routes>
         </div>
     )

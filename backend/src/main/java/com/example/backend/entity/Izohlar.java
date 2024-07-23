@@ -19,4 +19,6 @@ public class Izohlar {
     private String firstname;
     private String lastname;
     private String title;
+    @Column(columnDefinition = "boolean DEFAULT false")
+    private boolean active;
 }

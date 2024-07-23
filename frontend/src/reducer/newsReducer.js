@@ -56,7 +56,8 @@ const slice = createSlice({
         },
         getInfo:()=>{
         },
-        postIzoh(){}
+        postIzoh(){},
+        editIzoh:()=>{}
     }
 });
 
@@ -64,7 +65,7 @@ export const {
     getNews, getNewsSucces, getIzohlar, getIzohlarSucces, getManaviyat, getManaviyatSucces,
     getProfessor, getProfessorSucces, getMaqola, getMaqolaSucces, getMadrasa, getMadrasaSucces,
     saveNews, setDisplayImg, setImg, deleteNews, updateNews, getInfo,getInfoSuccess,
-    postIzoh
+    postIzoh,editIzoh
 } = slice.actions;
 
 export default slice;

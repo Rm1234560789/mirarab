@@ -46,7 +46,7 @@ function Header() {
                             <li className="has-dropdown">
                                 <a href=""><p>Oliy Madrasa</p></a>
                                 <div className={"dropdown2"}>
-                                    <p onClick={() => navigate("")}>Rahbariyat</p>
+                                    <p onClick={() => navigate("rahbariyatUser")}>Rahbariyat</p>
                                     <p onClick={() => navigate("")}>Oliy madrasa haqida</p>
                                     <p onClick={() => navigate("")}>Tuzilma</p>
                                     <p onClick={() => navigate("")}>Kafedralar</p>

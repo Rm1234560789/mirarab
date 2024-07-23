@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/izohlar")
 @RequiredArgsConstructor
@@ -18,5 +20,9 @@ public class IzohlarController {
     @PostMapping
     public void postIzoh(@RequestBody IzohDto izohDto){
         izohlarService.postIzoh(izohDto);
+    }
+    @PutMapping("/{id}")
+    public void editIzoh(@PathVariable    UUID id){
+        izohlarService.editIzoh(id);
     }
 }
