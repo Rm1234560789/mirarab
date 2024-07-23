@@ -10,7 +10,8 @@ const initialState = {
     imgInp: "",
     displayImg: "",
     name: "News",
-    info:{}
+    info:{},
+    userIzoh:[]
 };
 
 const slice = createSlice({
@@ -57,13 +58,18 @@ const slice = createSlice({
         getInfo:()=>{
         },
         postIzoh(){},
-        editIzoh:()=>{}
+        editIzoh:()=>{},
+        getUserIzoh(){},
+        getUserIzohSuccess(state,action){
+            console.log(action.payload)
+            state.userIzoh=action.payload;
+        }
     }
 });
 
 export const {
     getNews, getNewsSucces, getIzohlar, getIzohlarSucces, getManaviyat, getManaviyatSucces,
-    getProfessor, getProfessorSucces, getMaqola, getMaqolaSucces, getMadrasa, getMadrasaSucces,
+    getUserIzoh,getUserIzohSuccess,getProfessor, getProfessorSucces, getMaqola, getMaqolaSucces, getMadrasa, getMadrasaSucces,
     saveNews, setDisplayImg, setImg, deleteNews, updateNews, getInfo,getInfoSuccess,
     postIzoh,editIzoh
 } = slice.actions;

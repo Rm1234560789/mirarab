@@ -1,6 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getIzohlar, getMadrasa, getManaviyat, getMaqola, getNews, getProfessor, postIzoh} from '../reducer/newsReducer';
+import {
+    getIzohlar,
+    getMadrasa,
+    getManaviyat,
+    getMaqola,
+    getNews,
+    getProfessor,
+    getUserIzoh,
+    postIzoh
+} from '../reducer/newsReducer';
 import {getVideo} from "../reducer/vdReducer.js";
 import './News.css';
 import Header from "../components/Header.jsx";
@@ -17,7 +26,7 @@ import rightArrow from "../assets/Group 85.svg"
 
 function News() {
     const navigate = useNavigate();
-    const {news, izohlar, maqola, madrasa, manaviyat, professor} = useSelector(state => state.newsReducer);
+    const {news, izohlar,userIzoh, maqola, madrasa, manaviyat, professor} = useSelector(state => state.newsReducer);
     const {video} = useSelector(state => state.vdReducer);
     const dispatch = useDispatch();
     const {register,reset,handleSubmit} = useForm()
@@ -31,6 +40,7 @@ function News() {
         dispatch(getMadrasa());
         dispatch(getIzohlar());
         dispatch(getVideo())
+        dispatch(getUserIzoh())
     }, [dispatch]);
     const [fade, setFade] = useState(false);
 
@@ -48,11 +58,11 @@ function News() {
        if(currentIndex!==0){
            newIndex =  currentIndex - 3;
        }else if(izohlar.length%3===1){
-           newIndex=izohlar.length-1
+           newIndex=userIzoh.length-1
        }else if (izohlar.length%3===2) {
-           newIndex=izohlar.length-2
+           newIndex=userIzoh.length-2
        }else {
-           newIndex=izohlar.length-3
+           newIndex=userIzoh.length-3
        }
 
         setCurrentIndex(newIndex);
@@ -60,10 +70,10 @@ function News() {
 
     const nextSlide = () => {
         handleClick();
-        let newIndex = currentIndex === izohlar.length - 3 ? 0 : currentIndex + 3;
+        let newIndex = currentIndex === userIzoh.length - 3 ? 0 : currentIndex + 3;
         if (newIndex>izohlar.length){
             newIndex = 0;
-        }else if (currentIndex===izohlar.length - 1||currentIndex===izohlar.length||currentIndex>izohlar.length) {
+        }else if (currentIndex===userIzoh.length - 1||currentIndex===userIzoh.length||currentIndex>userIzoh.length) {
             console.log("Aaaaaaaaaaaa")
             newIndex=0;
         }
@@ -101,8 +111,7 @@ function News() {
     function drawCard() {
 
         let arr=[]
-        arr=izohlar.slice(currentIndex,currentIndex+3)
-
+        arr=userIzoh.slice(currentIndex,currentIndex+3)
             console.log(arr)
             console.log(currentIndex)
 
@@ -226,37 +235,6 @@ function News() {
 
 
                     </div>
-                    <div style={{}} className={"izohlarMain"}>
-                        <h1 style={{textAlign: "center"}}>Izohlar</h1>
-                        <div className={"carouselCont"}>
-                            <img style={{cursor: currentIndex === 0 ? "not-allowed" : "pointer"}} onClick={prevSlide}
-                                 src={leftArrow}/>
-                            <div className={"carouselCardCont"}>
-                                {drawCard().map((item, index) =>
-                                    item.active === true && (
-                                            <div className={"crCard"}>
-                                                <div className={"mirArab"}>
-                                                    <div className={"mirArabLeft"}>
-                                                        <img src={moon} alt={"not"}/>
-                                                    </div>
-                                                    <div className={"mirArabRight"}>
-                                                        <p>Mir Arab</p>
-                                                        <p>Oliy Madrasasi</p>
-                                                    </div>
-                                                </div>
-                                                <div style={{paddingInline: "24px", marginTop: "17px"}}>
-                                                    <p className={"commentName"}>{item.firstname}</p>
-                                                    <p className={"commentDesc"}>Lorem ipsum dolor sit amet, consectetur
-                                                        adipiscing
-                                                        elit. Nunc pulvinar lorem felis</p>
-                                                </div>
-                                            </div>
-                                        )
-                                )}
-                            </div>
-                            <img style={{cursor: "pointer"}} onClick={nextSlide} src={rightArrow}/>
-                        </div>
-                    </div>
                 </div>
                 <div style={{
 
@@ -265,23 +243,28 @@ function News() {
                     <div className={"carouselCont"}>
                        <img style={{cursor:"pointer"}} onClick={prevSlide} src={leftArrow}/>
                         <div className={"carouselCardCont"}>
-                            {drawCard().map((item, index) =><div className={"crCard"}>
-                                <div className={"mirArab"}>
-                                    <div className={"mirArabLeft"}>
-                                        <img src={moon} alt={"not"}/>
-                                    </div>
-                                    <div className={"mirArabRight"}>
-                                        <p>Mir Arab</p>
-                                        <p>Oliy Madrasasi</p>
-                                    </div>
-                                </div>
-                                <div style={{paddingInline:"24px",marginTop:"17px"}}>
-                                    <p className={"commentName"}>{item.firstname}</p>
-                                    <p className={"commentDesc"}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pulvinar lorem felis</p>
-                                </div>
-                            </div>)}
+                            {drawCard().map((item, index) =>
+                                 (
+                                        <div className={"crCard"}>
+                                            <div className={"mirArab"}>
+                                                <div className={"mirArabLeft"}>
+                                                    <img src={moon} alt={"not"}/>
+                                                </div>
+                                                <div className={"mirArabRight"}>
+                                                    <p>Mir Arab</p>
+                                                    <p>Oliy Madrasasi</p>
+                                                </div>
+                                            </div>
+                                            <div style={{paddingInline: "24px", marginTop: "17px"}}>
+                                                <p className={"commentName"}>{item.firstname}</p>
+                                                <p className={"commentDesc"}>Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                    elit. Nunc pulvinar lorem felis</p>
+                                            </div>
+                                        </div>
+                                    )
+                            )}
                         </div>
-                       <img style={{cursor:"pointer"}} onClick={nextSlide} src={rightArrow}/>
+                        <img style={{cursor: "pointer"}} onClick={nextSlide} src={rightArrow}/>
                     </div>
 
 

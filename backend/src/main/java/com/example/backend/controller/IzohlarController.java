@@ -25,4 +25,8 @@ public class IzohlarController {
     public void editIzoh(@PathVariable    UUID id){
         izohlarService.editIzoh(id);
     }
+    @GetMapping("/for/user")
+    public HttpEntity<?> getUserIzoh(){
+     return izohlarService.getIzohForUsers();
+    }
 }

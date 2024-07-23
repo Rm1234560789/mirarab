@@ -9,4 +9,5 @@ public interface IzohlarService {
     HttpEntity<?>getIzohlar();
     void postIzoh(IzohDto izohDto);
     void editIzoh(UUID id);
+    HttpEntity<?> getIzohForUsers();
 }

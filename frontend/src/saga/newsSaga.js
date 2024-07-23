@@ -17,7 +17,7 @@ import {
     deleteNews,
     updateNews,
     getInfo,
-    getInfoSuccess, setImg, postIzoh, editIzoh
+    getInfoSuccess, setImg, postIzoh, editIzoh, getUserIzohSuccess, getUserIzoh
 } from "../reducer/newsReducer";
 
 export function* workGetNews() {
@@ -177,7 +177,11 @@ export function* workEditIzoh(action) {
     }))
     yield put(getIzohlar())
 }
-
+export function* workGetIzohForUser(){
+    const res=yield call(()=>axios({url:"http://localhost:8080/izohlar/for/user",method:"GET"}))
+    console.log(res.data)
+    yield put(getUserIzohSuccess(res.data))
+}
 export function* newsSaga() {
     yield takeLatest(getNews().type, workGetNews);
     yield takeLatest(getIzohlar().type, workGetIzoh);
@@ -191,4 +195,5 @@ export function* newsSaga() {
     yield takeLatest(getInfo().type, getNewsById);
     yield takeLatest(postIzoh().type, workPostIzoh);
     yield takeLatest(editIzoh().type,workEditIzoh)
+    yield takeLatest(getUserIzoh().type,workGetIzohForUser)
 }

@@ -1,7 +1,7 @@
 import {useParams} from "react-router-dom"
 import {useEffect} from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { getInfo } from '../reducer/newsReducer';
+import {getInfo, getUserIzoh} from '../reducer/newsReducer';
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import "./Newss.css"

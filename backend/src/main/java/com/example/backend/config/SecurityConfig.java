@@ -35,6 +35,7 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable)
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(HttpMethod.GET,"izohlar/for/user").permitAll()
                         .requestMatchers(HttpMethod.GET,"/qadam/{id}").permitAll()
                         .requestMatchers(HttpMethod.POST, "/auth/login","/maqola","/manaviyat","/madrasahq","/professor","/qadam","/izohlar").permitAll()
                         .requestMatchers("/api/files/pdf/{id}").permitAll()
