@@ -1,7 +1,14 @@
-import { call, takeLatest, put } from "redux-saga/effects";
+import {call, takeLatest, put} from "redux-saga/effects";
 import axios from "axios";
 import {setImg} from "../reducer/newsReducer.js";
-import {deleteIslom, getIslom, getIslomSuccess, saveIslom, updateIslom} from "../reducer/buxoroReducer.js";
+import {
+    deleteIslom,
+    getIslom,
+    getIslomSuccess,
+    getOneIslomBuxoro, getOneIslomBuxoroSuccess,
+    saveIslom,
+    updateIslom
+} from "../reducer/buxoroReducer.js";
 
 
 export function* workGetIslom() {
@@ -45,9 +52,8 @@ export function* workDeleteIslom(action) {
 }
 
 export function* workUpdateIslom(action) {
-    console.log(action.payload)
     let data = action.payload;
-    if (action.payload.edit===true){
+    if (action.payload.edit === true) {
         console.log("editTrue")
         const form = new FormData();
         form.append("file", action.payload.img);
@@ -60,7 +66,7 @@ export function* workUpdateIslom(action) {
         data.img = res.data;
 
     }
-     yield call(() => axios({
+    yield call(() => axios({
         url: `http://localhost:8080/bux/${action.payload.id}`,
         method: "PUT",
         data: data,
@@ -70,10 +76,24 @@ export function* workUpdateIslom(action) {
 }
 
 
+export function* workGetOneIslomBuxoro(action) {
+    try {
+        const res = yield call(() => axios({
+            url: `http://localhost:8080/bux/${action.payload}`,
+            method: 'GET'
+        }));
+        yield put(getOneIslomBuxoroSuccess(res.data));
+    } catch (e) {
+        alert("Some error");
+    }
+}
 
 export function* buxoroSaga() {
-    yield takeLatest(getIslom().type,workGetIslom);
-    yield takeLatest(saveIslom().type,workPostIslom);
-    yield takeLatest(deleteIslom().type,workDeleteIslom);
-    yield takeLatest(updateIslom().type,workUpdateIslom);
+    yield takeLatest(getIslom().type, workGetIslom);
+    yield takeLatest(saveIslom().type, workPostIslom);
+    yield takeLatest(deleteIslom().type, workDeleteIslom);
+    yield takeLatest(updateIslom().type, workUpdateIslom);
+    yield takeLatest(getOneIslomBuxoro().type, workGetOneIslomBuxoro);
+
+
 }

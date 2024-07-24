@@ -36,7 +36,7 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET,"izohlar/for/user").permitAll()
-                        .requestMatchers(HttpMethod.GET,"/qadam/{id}").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/qadam/{id}","/bux/{id}").permitAll()
                         .requestMatchers(HttpMethod.POST, "/auth/login","/maqola","/manaviyat","/madrasahq","/professor","/qadam","/izohlar").permitAll()
                         .requestMatchers("/api/files/pdf/{id}").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/files/img","/api/files/video","/video","/news","/rahbariyat","/bux","/obida","/alloma","/qabul","/xalqaro","/xorij","/vd","/audio","/raddiya","/ustoz","/talaba").permitAll()

@@ -1,0 +1,66 @@
+.buxoro-img {
+    width: 50%;
+    height: 367px;
+}
+
+.box-text {
+    word-break: break-all;
+    width: 50%;
+    height: 367px;
+    overflow: hidden;
+}
+
+.text-h4 {
+    font-weight: 700;
+    font-size: 26px;
+    font-family: Raleway;
+    line-height: 31px;
+    text-decoration: underline;
+}
+
+.text-h4:hover{
+    font-size: 30px;
+}
+
+.text-p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    font-family: Raleway;
+}
+
+.buxoro-islom.wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.main-box-buxoro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title-buxoro {
+    color: #0E5344;
+    text-align: center;
+}
+
+.buxoro-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+}
+
+.buxoro-box {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+    height: auto;
+}
+
+.buxoro-box:hover{
+    box-shadow: 2px 2px 10px 2px;
+}
