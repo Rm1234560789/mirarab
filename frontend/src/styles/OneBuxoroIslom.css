@@ -1,0 +1,41 @@
+.buxoro-img1 {
+    width: 50%;
+    height: 367px;
+    float: left;
+}
+
+.box-text1 {
+    word-break: break-all;
+    width: 50%;
+    height: 367px;
+}
+
+.text-h41 {
+    font-weight: 700;
+    font-size: 26px;
+    font-family: Raleway;
+    line-height: 31px;
+}
+
+.text-p1 {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    font-family: Raleway;
+    word-break: break-all;
+}
+
+.buxoro-islom1 .wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.main-box-buxoro1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.buxoro-box1 {
+    width: 100%;
+    height: max-content;
+}

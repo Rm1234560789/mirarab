@@ -33,6 +33,8 @@ import RahbariyatUser from "./pages/RahbariyatUser.jsx";
 import Maqola from "./pages/maqola/Maqola.jsx";
 import Ustozlar from "./pages/maqola/Ustozlar.jsx";
 import Talaba from "./pages/maqola/Talaba.jsx";
+import BuxoroIslom from "./pages/buxoro/BuxoroIslom.jsx";
+import OneBuxoroIslom from "./pages/buxoro/OneBuxoroIslom.jsx";
 
 function App() {
 
@@ -40,7 +42,8 @@ function App() {
         <div>
             <Routes>
                 <Route path={"/rahbariyatUser"} element={<RahbariyatUser/>}/>
-
+                <Route path={"/buxoro/islom/poytaxti"} element={<BuxoroIslom/>}/>
+                <Route path={"/buxoro/islom/poytaxti/:id"} element ={<OneBuxoroIslom/>}/>
                 <Route path={"/admin"} element={<Admin/>}>
                     <Route path={"bosh"} element={<BoshSahifa/>}>
                         <Route path={"video"} element={<BoshVideo/>}/>

@@ -14,7 +14,7 @@ function RahbariyatUser(props) {
     }, [dispatch]);
 
     return (
-        <div>
+        <div className={"rahbariyatUser"}>
             <Header/>
             <div className={"wrapper"} style={{display: "flex", flexDirection: "column", gap: "30px"}}>
                 <div className={"main-box"}>

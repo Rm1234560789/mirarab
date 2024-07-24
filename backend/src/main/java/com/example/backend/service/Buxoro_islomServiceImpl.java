@@ -57,9 +57,14 @@ public class Buxoro_islomServiceImpl implements Buxoro_islomService {
             buxoro2.setDescription(buxoro.getDescription());
             buxoro2.setImg(buxoro.getImg());
             buxoroIslom.save(buxoro2);
-            return ResponseEntity.ok(" updated successfully");
+            return ResponseEntity.ok("updated successfully");
         } else {
             return ResponseEntity.status(404).body("not found");
         }
+    }
+
+    @Override
+    public Buxoro_Islom getIslomBuxoroById(UUID id) {
+        return buxoroIslom.findById(id).orElseThrow();
     }
 }

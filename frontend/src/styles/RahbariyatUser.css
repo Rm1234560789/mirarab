@@ -1,3 +1,6 @@
+.rahbariyatUser .wrapper{
+    max-width: 1500px;
+}
 .main-box {
     display: flex;
     flex-direction: column;

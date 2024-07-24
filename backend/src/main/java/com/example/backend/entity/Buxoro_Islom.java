@@ -18,6 +18,7 @@ public class Buxoro_Islom {
     @Column(columnDefinition = "uuid DEFAULT gen_random_uuid()")
     private UUID id;
     private String title;
+    @Column(columnDefinition = "TEXT")
     private String description;
     private String img;
     @Column(name = "created_at", updatable = false, nullable = false)
