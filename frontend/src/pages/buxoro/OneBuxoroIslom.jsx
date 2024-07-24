@@ -29,7 +29,7 @@ function OneBuxoroIslom(props) {
                     </div>
                 }
             </div>
-            <div>
+            <div style={{marginTop:"30px"}}>
                 <Footer/>
             </div>
         </div>
