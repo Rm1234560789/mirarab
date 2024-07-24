@@ -40,6 +40,8 @@ import MuqaddasCurrent from "./pages/buxoro/MuqaddasCurrent.jsx";
 import Izohlar from "./pages/Izohlar.jsx";
 import AllomaUser from "./pages/buxoro/AllomaUser.jsx";
 import AllomaCurrent from "./pages/buxoro/AllomaCurrent.jsx";
+import ObidaUser from "./pages/buxoro/ObidaUser.jsx";
+import CurrentObida from "./pages/buxoro/CurrentObida.jsx";
 
 function App() {
 
@@ -89,6 +91,8 @@ function App() {
                 <Route path={"/izoh"} element={<Izohlar/>}/>
                 <Route path={"/muqqadas/qadamjolar"} element={<Muqaddas/>} />
                 <Route path={"/muqqadas/qadamjolar/:id"} element={<MuqaddasCurrent/>}/>
+                <Route path={"/buxoro/obidalari"} element={<ObidaUser/>} />
+                <Route path={"/buxoro/obidalari/:id"} element={<CurrentObida/>} />
                 <Route path={"/ulug/alloma"} element={<AllomaUser/>}/>
                 <Route path={"/ulug/alloma/:id"} element={<AllomaCurrent/>}/>
             </Routes>
