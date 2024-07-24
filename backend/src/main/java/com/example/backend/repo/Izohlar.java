@@ -2,5 +2,9 @@ package com.example.backend.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface Izohlar extends JpaRepository<com.example.backend.entity.Izohlar, Integer> {
+import java.util.List;
+import java.util.UUID;
+
+public interface Izohlar extends JpaRepository<com.example.backend.entity.Izohlar, UUID> {
+List<com.example.backend.entity.Izohlar> getAllByActiveIsTrue();
 }

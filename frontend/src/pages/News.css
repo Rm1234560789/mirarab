@@ -521,26 +521,6 @@ body {
 
 }
 
-/*.carousel-button {*/
-/*    padding: 10px 20px;*/
-/*    margin: 20px;*/
-/*    font-size: 16px;*/
-/*    cursor: pointer;*/
-/*    top: 50%;*/
-/*    transform: translateY(-50%);*/
-/*}*/
-
-/*#prevBtn {*/
-/*    left: 0;*/
-/*}*/
-
-/*#nextBtn {*/
-/*    right: 0;*/
-/*}*/
-
-/*-------------------*/
-
-
 .card-img4 img {
     align-items: center;
     width: 143px;
@@ -606,17 +586,19 @@ body {
 }
 
 .form {
+    width: 1380px;
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 60px;
+    padding: 0 25px;
 }
 
 .input {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    width: 200px;
+    width: 322px;
 }
 
 .submit-button {
@@ -637,4 +619,3 @@ body {
     max-width: 100%;
 
 }
-

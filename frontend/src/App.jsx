@@ -35,6 +35,9 @@ import Ustozlar from "./pages/maqola/Ustozlar.jsx";
 import Talaba from "./pages/maqola/Talaba.jsx";
 import BuxoroIslom from "./pages/buxoro/BuxoroIslom.jsx";
 import OneBuxoroIslom from "./pages/buxoro/OneBuxoroIslom.jsx";
+import Muqaddas from "./pages/buxoro/Muqaddas.jsx";
+import MuqaddasCurrent from "./pages/buxoro/MuqaddasCurrent.jsx";
+import Izohlar from "./pages/Izohlar.jsx";
 
 function App() {
 
@@ -52,7 +55,6 @@ function App() {
                         <Route path={"manaviyat"} element={<BoshManaviyat/>}/>
                         <Route path={"madrasa"} element={<BoshMadrasa/>}/>
                         <Route path={"professor"} element={<BoshProfessor/>}/>
-                        <Route path={"izohlar"} element={<BoshIzohlar/>}/>
                     </Route>
                     <Route path={"bux"} element={<Buxoro/>}>
                         <Route path={"islom"} element={<Islom/>}/>
@@ -82,6 +84,9 @@ function App() {
                 <Route path={"/maqola/:uuid"} element={<Maqolas/>}/>
                 <Route path={"/madrasa/:uuid"} element={<MadrasaHq/>}/>
                 <Route path={"/madrasa/hayot/:id"} element={<MadrasaHayoti/>}/>
+                <Route path={"/izoh"} element={<Izohlar/>}/>
+                <Route path={"/muqqadas/qadamjolar"} element={<Muqaddas/>} />
+                <Route path={"/muqqadas/qadamjolar/:id"} element={<MuqaddasCurrent/>}/>
             </Routes>
         </div>
     )

@@ -7,6 +7,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -21,6 +22,20 @@ public class IzohlarServiceImpl implements IzohlarService {
 
     @Override
     public void postIzoh(IzohDto izohDto) {
-        izohlar.save(new com.example.backend.entity.Izohlar(UUID.randomUUID(), izohDto.firstName(), izohDto.lastName(), izohDto.title()));
+        izohlar.save(new com.example.backend.entity.Izohlar(UUID.randomUUID(), izohDto.firstName(), izohDto.lastName(), izohDto.title(),false));
     }
+
+    @Override
+    public void editIzoh(UUID id) {
+        com.example.backend.entity.Izohlar izohlar1 = izohlar.findById(id).orElseThrow();
+        izohlar1.setActive(true);
+        izohlar.save(izohlar1);
+    }
+
+    @Override
+    public HttpEntity<?> getIzohForUsers() {
+        List<com.example.backend.entity.Izohlar> allByActiveIsTrue = izohlar.getAllByActiveIsTrue();
+        return ResponseEntity.ok(allByActiveIsTrue);
+    }
+
 }

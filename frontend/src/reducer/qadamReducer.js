@@ -1,7 +1,13 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-    qadam: []
+    qadam: [],
+    currentQadam:{
+    id:"",
+    description:"",
+    title:"",
+    img:""
+    }
 
 }
 const slice = createSlice({
@@ -16,11 +22,17 @@ const slice = createSlice({
         },
         saveQadam: () => {},
         deleteQadam: () => {},
-        updateQadam: () => {}
+        updateQadam: () => {},
+        getCurrentQadam(){},
+        getCurrentQadamSucces: (state, action) => {
+            console.log("cccc")
+            console.log(action.payload)
+            state.currentQadam = action.payload
+        }
     }
 });
 
 export const {
-   getQadam,getQadamSucces,saveQadam,deleteQadam,updateQadam
+   getQadam,getCurrentQadam,getCurrentQadamSucces,getQadamSucces,saveQadam,deleteQadam,updateQadam
 } = slice.actions;
 export default slice;
