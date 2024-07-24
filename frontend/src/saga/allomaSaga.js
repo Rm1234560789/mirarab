@@ -1,7 +1,15 @@
 import { call, takeLatest, put } from "redux-saga/effects";
 import axios from "axios";
 import {setImg} from "../reducer/newsReducer.js";
-import {deleteAlloma, getAlloma, getAllomaSuccess, saveAlloma, updateAlloma} from "../reducer/allomaReducer.js";
+import {
+    deleteAlloma,
+    getAlloma, getAllomaget,
+    getAllomagetSuccess,
+    getAllomaSuccess,
+    saveAlloma,
+    updateAlloma
+} from "../reducer/allomaReducer.js";
+import {getOneIslomBuxoroSuccess} from "../reducer/buxoroReducer.js";
 
 
 export function* workGetAlloma() {
@@ -69,6 +77,18 @@ export function* workUpdateAlloma(action) {
     yield put(setImg(""))
 }
 
+export function* workGetAllomaget(action) {
+    try {
+        const res = yield call(() => axios({
+            url: `http://localhost:8080/alloma/${action.payload}`,
+            method: 'GET'
+        }));
+        yield put(getAllomagetSuccess(res.data));
+    } catch (e) {
+        alert("Some error");
+    }
+}
+
 
 
 export function* allomaSaga() {
@@ -76,4 +96,5 @@ export function* allomaSaga() {
     yield takeLatest(saveAlloma().type,workPostAlloma);
     yield takeLatest(deleteAlloma().type,workDeleteAlloma);
     yield takeLatest(updateAlloma().type,workUpdateAlloma);
+    yield takeLatest(getAllomaget().type,workGetAllomaget)
 }

@@ -1,8 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-    alloma: []
-
+    alloma: [],
+    allomaget:{}
 }
 const slice = createSlice({
     name: "alloma",
@@ -16,11 +16,15 @@ const slice = createSlice({
         },
         saveAlloma: () => {},
         deleteAlloma: () => {},
-        updateAlloma: () => {}
+        updateAlloma: () => {},
+        getAllomaget: () => {},
+        getAllomagetSuccess: (state, action) => {
+            state.allomaget = action.payload
+        }
     }
 });
 
 export const {
-    getAlloma,getAllomaSuccess,saveAlloma,deleteAlloma,updateAlloma
+    getAlloma,getAllomaSuccess,saveAlloma,deleteAlloma,updateAlloma,getAllomagetSuccess,getAllomaget
 } = slice.actions;
 export default slice;

@@ -113,7 +113,7 @@ function Header() {
                                     <p onClick={() => navigate("/buxoro/islom/poytaxti")}>Buxoro islom madaniyati poytaxti</p>
                                     <p onClick={() => navigate("")}>Buxoro obidalari</p>
                                     <p onClick={() => navigate("/muqqadas/qadamjolar")}>Muqaddas qadamjolar</p>
-                                    <p onClick={() => navigate("")}>Ulug allomalarimiz</p>
+                                    <p onClick={() => navigate("/ulug/alloma")}>Ulug allomalarimiz</p>
                                 </div>
                             </li>
                         </ul>
