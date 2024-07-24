@@ -38,6 +38,8 @@ import OneBuxoroIslom from "./pages/buxoro/OneBuxoroIslom.jsx";
 import Muqaddas from "./pages/buxoro/Muqaddas.jsx";
 import MuqaddasCurrent from "./pages/buxoro/MuqaddasCurrent.jsx";
 import Izohlar from "./pages/Izohlar.jsx";
+import ObidaUser from "./pages/buxoro/ObidaUser.jsx";
+import CurrentObida from "./pages/buxoro/CurrentObida.jsx";
 
 function App() {
 
@@ -87,6 +89,8 @@ function App() {
                 <Route path={"/izoh"} element={<Izohlar/>}/>
                 <Route path={"/muqqadas/qadamjolar"} element={<Muqaddas/>} />
                 <Route path={"/muqqadas/qadamjolar/:id"} element={<MuqaddasCurrent/>}/>
+                <Route path={"/buxoro/obidalari"} element={<ObidaUser/>} />
+                <Route path={"/buxoro/obidalari/:id"} element={<CurrentObida/>} />
             </Routes>
         </div>
     )

@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -55,5 +56,11 @@ public class ObidaServiceImpl implements ObidaService {
         } else {
             return ResponseEntity.status(404).body(" not found");
         }
+    }
+
+    @Override
+    public Buxoro_Obidalar getById(UUID id) {
+        Buxoro_Obidalar buxoroObidalar = obidaRepo.findById(id).orElseThrow();
+        return buxoroObidalar;
     }
 }

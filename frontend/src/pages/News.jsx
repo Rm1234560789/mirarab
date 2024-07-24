@@ -204,7 +204,7 @@ function News() {
                     <div className={"cards3"}>
                         {
                             madrasa.map((item6, index) =>
-                                <div key={index} className="card3">
+                                <div key={index} className="card3" onClick={()=>navigate(`/madrasa/hayot/${item6.id}`)}>
                                     <div className="card-img3">
                                         <img src={`http://localhost:8080/api/files/img?name=${item6.img}`} alt=""/>
                                     </div>

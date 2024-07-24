@@ -1,7 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-    obida: []
+    obida: [],
+    currentObida: {}
 
 }
 const slice = createSlice({
@@ -14,13 +15,21 @@ const slice = createSlice({
         getObidaSucces: (state, action) => {
             state.obida = action.payload
         },
-        saveObida: () => {},
-        deleteObida: () => {},
-        updateObida: () => {}
+        saveObida: () => {
+        },
+        deleteObida: () => {
+        },
+        updateObida: () => {
+        },
+        fetchCurrentObida() {
+        },
+        fetchCurrentObidaSuccess(state, action) {
+            state.currentObida = action.payload
+        }
     }
 });
 
 export const {
-  getObida,getObidaSucces,saveObida,deleteObida,updateObida
+    fetchCurrentObida, fetchCurrentObidaSuccess, getObida, getObidaSucces, saveObida, deleteObida, updateObida
 } = slice.actions;
 export default slice;

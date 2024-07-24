@@ -7,6 +7,7 @@ import com.example.backend.service.ObidaService;
 import com.example.backend.service.RahbariyatService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -32,5 +33,9 @@ public class ObidaController {
     @PutMapping("/{id}")
     public HttpEntity<?> editObida(@PathVariable UUID id, @RequestBody BxObida bxObida) {
         return obidaService.editObida(id, bxObida);
+    }
+    @GetMapping("/{id}")
+    public HttpEntity<?> getObidaById(@PathVariable UUID id){
+        return ResponseEntity.ok(obidaService.getById(id));
     }
 }
