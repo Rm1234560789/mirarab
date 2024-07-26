@@ -22,29 +22,31 @@ import audioReducer from "../reducer/audioReducer.js";
 import raddiyavdReducer from "../reducer/raddiyavdReducer.js";
 import ustozReducer from "../reducer/ustozReducer.js";
 import talabaReducer from "../reducer/talabaReducer.js";
+import turliMavzularReducer from "../reducer/turliMavzularReducer.js";
 
 const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
-    newsReducer:newsReducer.reducer,
-    vdReducer:vdReducer.reducer,
-    rahbariyatReducer:rahbariyatReducer.reducer,
-    maqolaReducer:maqolaReducer.reducer,
-    manaviyatRukniReducer:manaviyatRukniReducer.reducer,
-    madrasaHqReducer:madrasaHqReducer.reducer,
-    professorReducer:professorReducer.reducer,
-    buxoroReducer:buxoroReducer.reducer,
-    obidaReducer:obidaReducer.reducer,
-    qadamReducer:qadamReducer.reducer,
-    allomaReducer:allomaReducer.reducer,
-    qabulReducer:qabulReducer.reducer,
-    shartnomaReducer:shartnomaReducer.reducer,
-    xorijReducer:xorijReducer.reducer,
-    videoReducer:videoReducer.reducer,
-    audioReducer:audioReducer.reducer,
-    raddiyavdReducer:raddiyavdReducer.reducer,
-    ustozReducer:ustozReducer.reducer,
-    talabaReducer:talabaReducer.reducer,
+    newsReducer: newsReducer.reducer,
+    vdReducer: vdReducer.reducer,
+    rahbariyatReducer: rahbariyatReducer.reducer,
+    maqolaReducer: maqolaReducer.reducer,
+    manaviyatRukniReducer: manaviyatRukniReducer.reducer,
+    madrasaHqReducer: madrasaHqReducer.reducer,
+    professorReducer: professorReducer.reducer,
+    buxoroReducer: buxoroReducer.reducer,
+    obidaReducer: obidaReducer.reducer,
+    qadamReducer: qadamReducer.reducer,
+    allomaReducer: allomaReducer.reducer,
+    qabulReducer: qabulReducer.reducer,
+    shartnomaReducer: shartnomaReducer.reducer,
+    xorijReducer: xorijReducer.reducer,
+    videoReducer: videoReducer.reducer,
+    audioReducer: audioReducer.reducer,
+    raddiyavdReducer: raddiyavdReducer.reducer,
+    ustozReducer: ustozReducer.reducer,
+    talabaReducer: talabaReducer.reducer,
+    turliMavzularReducer: turliMavzularReducer.reducer
 })
 
 

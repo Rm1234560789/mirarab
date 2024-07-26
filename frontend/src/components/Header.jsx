@@ -75,7 +75,7 @@ function Header() {
                                     <p onClick={() => navigate("")}>Talaba minbari</p>
                                     <p onClick={() => navigate("")}>Ilmiy maqolalar</p>
                                     <p onClick={() => navigate("")}>Raddiyalar</p>
-                                    <p onClick={() => navigate("")}>Turli mavzular</p>
+                                    <p onClick={() => navigate("/turli/mavzu/user")}>Turli mavzular</p>
                                 </div>
                             </li>
                             <li className="has-dropdown">

@@ -45,6 +45,8 @@ import CurrentObida from "./pages/buxoro/CurrentObida.jsx";
 import QabulUser from "./pages/QabulUser.jsx";
 import RaddiyaUser from "./pages/media/RaddiyaUser.jsx";
 import VideoUser from "./pages/media/VideoUser.jsx";
+import TurliMavzuAdm from "./pages/media/TurliMavzuAdm.jsx";
+import TurliMavzuUser from "./pages/media/TurliMavzuUser.jsx";
 
 function App() {
 
@@ -79,6 +81,7 @@ function App() {
                         <Route path={"video"} element={<Video/>}/>
                         <Route path={"audio"} element={<Audio/>}/>
                         <Route path={"raddiya"} element={<RaddiyaVd/>}/>
+                        <Route path={"turli_mavzu"} element={<TurliMavzuAdm/>}/>
                     </Route>
                     <Route path={"maqola"} element={<Maqola/>}>
                         <Route path={"ustoz"} element={<Ustozlar/>}/>
@@ -101,6 +104,7 @@ function App() {
                 <Route path={"/qabul/user"} element={<QabulUser/>}/>
                 <Route path={"/raddiya/video"} element={<RaddiyaUser/>}/>
                 <Route path={"/video/user"} element={<VideoUser/>}/>
+                <Route path={"/turli/mavzu/user"} element={<TurliMavzuUser/>}/>
             </Routes>
         </div>
     )

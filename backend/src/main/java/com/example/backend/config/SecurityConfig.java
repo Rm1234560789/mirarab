@@ -44,6 +44,10 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/alloma/{id}","/api/files/video","/video","/news/{id}","/rahbariyat","/maqola/{id}","/madrasahq/{id}").permitAll()
                         .requestMatchers(HttpMethod.PUT, "/video/{id}","/news/{id}","/rahbariyat/{id}","/maqola/{id}","/manaviyat/{id}","/madrasahq/{id}","/professor/{id}","/bux/{id}","/obida/{id}","/qadam/{id}","/alloma/{id}","/qabul/{id}","/xalqaro/{id}","/xorij/{id}","/vd/{id}","/audio/{id}","/raddiya/{id}","/talaba/{id}","/ustoz/{id}","/izohlar/{id}").permitAll()
                         .requestMatchers(HttpMethod.DELETE, "/video/{id}","/news/{id}","/rahbariyat/{id}","/maqola/{id}","/manaviyat/{id}","/madrasahq/{id}","/professor/{id}","/bux/{id}","/obida/{id}","/qadam/{id}","/alloma/{id}","/qabul/{id}","/xalqaro/{id}","/xorij/{id}","/vd/{id}","/audio/{id}","/raddiya/{id}","/talaba/{id}","/ustoz/{id}").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/api/turli/mavzu").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/api/turli/mavzu").permitAll()
+                        .requestMatchers(HttpMethod.DELETE,"/api/turli/mavzu").permitAll()
+                        .requestMatchers(HttpMethod.PUT,"/api/turli/mavzu").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(myFilter, UsernamePasswordAuthenticationFilter.class);
