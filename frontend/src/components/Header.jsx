@@ -62,10 +62,10 @@ function Header() {
                             <li className="has-dropdown">
                                 <a href=""><p>Yangiliklar</p></a>
                                 <div className={"dropdown2"}>
-                                    <p onClick={() => navigate("")}>O'zbekiston yangiliklari</p>
-                                    <p onClick={() => navigate("")}>Dunyo yangiliklari</p>
-                                    <p onClick={() => navigate("")}>Savol javob</p>
-                                    <p onClick={() => navigate("")}>Fikr mulohaza</p>
+                                    <p onClick={() => navigate("/new/news")}>O'zbekiston yangiliklari</p>
+                                    <p onClick={() => navigate("/world/news")}>Dunyo yangiliklari</p>
+                                    <p onClick={() => navigate("/savol/javob")}>Savol javob</p>
+                                    <p onClick={() => navigate("/fikr/mulohaza")}>Fikr mulohaza</p>
                                 </div>
                             </li>
                             <li className="has-dropdown">
@@ -76,14 +76,16 @@ function Header() {
                                     <p onClick={() => navigate("")}>Ilmiy maqolalar</p>
                                     <p onClick={() => navigate("/raddiya")}>Raddiyalar</p>
                                     <p onClick={() => navigate("")}>Turli mavzular</p>
+                                    <p onClick={() => navigate("")}>Raddiyalar</p>
+                                    <p onClick={() => navigate("/turli/mavzu/user")}>Turli mavzular</p>
                                 </div>
                             </li>
                             <li className="has-dropdown">
                                 <a href=""><p>Media</p></a>
                                 <div className={"dropdown2"}>
-                                    <p onClick={() => navigate("")}>Video materiallar</p>
+                                    <p onClick={() => navigate("/video/user")}>Video materiallar</p>
                                     <p onClick={() => navigate("")}>Audio materiallar</p>
-                                    <p onClick={() => navigate("")}>Raddiyalar (video)</p>
+                                    <p onClick={() => navigate("/raddiya/video")}>Raddiyalar (video)</p>
                                 </div>
                             </li>
                             <li className="has-dropdown">
@@ -102,15 +104,15 @@ function Header() {
                                 </div>
                             </li>
                             <li className="has-dropdown">
-                                <a href=""><p>Qabul</p></a>
-                                <div className={"dropdown2"}>
-                                    <p onClick={() => navigate("")}>Abiturentlar uchun</p>
-                                </div>
+                                <a onClick={() => {
+                                    navigate("/qabul/user")
+                                }}><p style={{color:"#0E5344E5"}}>Qabul</p></a>
                             </li>
                             <li className="has-dropdown">
                                 <a href=""><p>Buxoro Sharif</p></a>
                                 <div className={"dropdown2"}>
-                                    <p onClick={() => navigate("/buxoro/islom/poytaxti")}>Buxoro islom madaniyati poytaxti</p>
+                                    <p onClick={() => navigate("/buxoro/islom/poytaxti")}>Buxoro islom madaniyati
+                                        poytaxti</p>
                                     <p onClick={() => navigate("/buxoro/obidalari")}>Buxoro obidalari</p>
                                     <p onClick={() => navigate("/muqqadas/qadamjolar")}>Muqaddas qadamjolar</p>
                                     <p onClick={() => navigate("/ulug/alloma")}>Ulug allomalarimiz</p>

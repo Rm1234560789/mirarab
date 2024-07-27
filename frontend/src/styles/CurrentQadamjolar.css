@@ -1,12 +1,17 @@
 .currentQadamjo .wrapper{
         margin-bottom: 44px;
-        max-width: 1000px;
+        max-width: 1500px;
+        display: flex;
 
-        height: 800px;
+
+
 }
 .currentQadamjoImg{
-        width: 777px;
+        width: 50%;
         height: 394px;
+        float: left;
+        margin-right: 20px;
+
 
 
 }
@@ -15,7 +20,7 @@
         font-size: 20px;
         font-weight: 700;
         line-height: 23px;
-        text-align: left;
+
         text-align: center;
 
 }
@@ -24,6 +29,7 @@
         font-size: 20px;
         font-weight: 400;
         line-height: 23px;
-        text-align: left;
+        word-break: break-all;
+
 
 }

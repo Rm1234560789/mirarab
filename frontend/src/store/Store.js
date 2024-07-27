@@ -23,10 +23,38 @@ import raddiyavdReducer from "../reducer/raddiyavdReducer.js";
 import ustozReducer from "../reducer/ustozReducer.js";
 import talabaReducer from "../reducer/talabaReducer.js";
 import raddiyaReducer from "../reducer/raddiyaReducer.js";
+import newnewsReducer from "../reducer/newnewsReducer.js";
+import newnewsbyidReducer from "../reducer/newnewsbyidReducer.js";
+import dunyoYangiliklariReducer from "../reducer/dunyoYangiliklariReducer.js";
+import {worldnewsid} from "../saga/dunyoYangiliklariIdSaga.js";
+import dunyoYangiliklariIdReducer from "../reducer/dunyoYangiliklariIdReducer.js";
+import savoljavobReducer from "../reducer/savoljavobReducer.js";
+import fikrmulohazaReducer from "../reducer/fikrmulohazaReducer.js";
+import turliMavzularReducer from "../reducer/turliMavzularReducer.js";
 
 const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
+    newsReducer: newsReducer.reducer,
+    vdReducer: vdReducer.reducer,
+    rahbariyatReducer: rahbariyatReducer.reducer,
+    maqolaReducer: maqolaReducer.reducer,
+    manaviyatRukniReducer: manaviyatRukniReducer.reducer,
+    madrasaHqReducer: madrasaHqReducer.reducer,
+    professorReducer: professorReducer.reducer,
+    buxoroReducer: buxoroReducer.reducer,
+    obidaReducer: obidaReducer.reducer,
+    qadamReducer: qadamReducer.reducer,
+    allomaReducer: allomaReducer.reducer,
+    qabulReducer: qabulReducer.reducer,
+    shartnomaReducer: shartnomaReducer.reducer,
+    xorijReducer: xorijReducer.reducer,
+    videoReducer: videoReducer.reducer,
+    audioReducer: audioReducer.reducer,
+    raddiyavdReducer: raddiyavdReducer.reducer,
+    ustozReducer: ustozReducer.reducer,
+    talabaReducer: talabaReducer.reducer,
+    turliMavzularReducer: turliMavzularReducer.reducer
     newsReducer:newsReducer.reducer,
     vdReducer:vdReducer.reducer,
     rahbariyatReducer:rahbariyatReducer.reducer,
@@ -47,6 +75,12 @@ const rootReducer = combineReducers({
     ustozReducer:ustozReducer.reducer,
     raddiyaReducer:raddiyaReducer.reducer,
     talabaReducer:talabaReducer.reducer,
+    newnewsReducer:newnewsReducer.reducer,
+    newnewsid: newnewsbyidReducer,
+    dunyoYangiliklariReducer:dunyoYangiliklariReducer.reducer,
+    worldnewsid:dunyoYangiliklariIdReducer,
+    savoljavobReducer:savoljavobReducer.reducer,
+    fikrmulohazaReducer:fikrmulohazaReducer.reducer
 })
 
 

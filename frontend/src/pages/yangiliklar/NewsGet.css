@@ -1,0 +1,26 @@
+.newnews .wrapper{
+    max-width: 1500px;
+}
+.text-news2{
+    font-family: Raleway sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23.48px;
+    text-align: left;
+
+}
+.ware{
+    display: flex;
+    gap: 24px;
+}
+.sarlavha{
+    font-family: Playfair Display sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26.66px;
+    text-align: left;
+
+}
+.blockder{
+
+}

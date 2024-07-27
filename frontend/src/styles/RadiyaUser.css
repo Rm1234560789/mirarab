@@ -1,0 +1,14 @@
+.radiya-user .wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.raddiya-boxes {
+    display: grid;
+    margin: 0 auto;
+    gap: 50px;
+    grid-template-columns: repeat(3, 1fr);
+}
