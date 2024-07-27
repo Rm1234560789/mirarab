@@ -22,6 +22,7 @@ import audioReducer from "../reducer/audioReducer.js";
 import raddiyavdReducer from "../reducer/raddiyavdReducer.js";
 import ustozReducer from "../reducer/ustozReducer.js";
 import talabaReducer from "../reducer/talabaReducer.js";
+import raddiyaReducer from "../reducer/raddiyaReducer.js";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -44,6 +45,7 @@ const rootReducer = combineReducers({
     audioReducer:audioReducer.reducer,
     raddiyavdReducer:raddiyavdReducer.reducer,
     ustozReducer:ustozReducer.reducer,
+    raddiyaReducer:raddiyaReducer.reducer,
     talabaReducer:talabaReducer.reducer,
 })
 

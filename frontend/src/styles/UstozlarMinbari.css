@@ -1,0 +1,65 @@
+.ustozlar-minbar{
+    max-width: 1500px;
+    margin: 0  auto ;
+
+}
+.ustozlar-minbar h1{
+    color: #0E5344;
+    font-family: Playfair Display;
+    font-size: 40.02px;
+    font-weight: 700;
+    line-height: 53.35px;
+}
+
+.card4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    max-width: 1508px;
+    margin: 0 auto 0 auto;
+}
+.minbarCard{
+    max-width: 387px;
+    height: 312px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-block: 50px;
+
+}
+.minbarCardImg{
+    max-width: 146.74px;
+    height: 173.42px;
+}
+.minbarCardImg img{
+    width: 100%;
+    height: 100%;
+}
+
+.minbarCardText{
+    width: 100%;
+    height: 139px;
+    text-align: center;
+    padding-inline: 10px;
+    overflow: hidden;
+}
+.minbarCardText h3{
+    word-break: break-all;
+    font-family: Playfair Display;
+    font-size: 20.07px;
+    font-weight: 700;
+    line-height: 26.75px;
+    text-align: center;
+    color: #0E5344;
+
+}
+.minbarCardText p{
+    font-family: Playfair Display;
+    font-size: 16.01px;
+    font-weight: 700;
+    line-height: 21.34px;
+    text-align: center;
+    max-width: 333.5px;
+    height: 40px;
+    color: #0E5344E5;
+}

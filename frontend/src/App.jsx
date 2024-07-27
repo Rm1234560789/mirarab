@@ -42,6 +42,10 @@ import AllomaUser from "./pages/buxoro/AllomaUser.jsx";
 import AllomaCurrent from "./pages/buxoro/AllomaCurrent.jsx";
 import ObidaUser from "./pages/buxoro/ObidaUser.jsx";
 import CurrentObida from "./pages/buxoro/CurrentObida.jsx";
+import UstozlarMinbari from "./pages/maqola/UstozlarMinbari.jsx";
+import TalabaMinbari from "./pages/maqola/TalabaMinbari.jsx";
+import Raddiya from './pages/maqola/Raddiya.jsx';
+import RaddiyaAdmin from "./pages/maqola/RaddiyaAdmin.jsx";
 
 function App() {
 
@@ -80,8 +84,12 @@ function App() {
                     <Route path={"maqola"} element={<Maqola/>}>
                         <Route path={"ustoz"} element={<Ustozlar/>}/>
                         <Route path={"talaba"} element={<Talaba/>}/>
+                        <Route path={"raddiyas"} element={<RaddiyaAdmin/>}/>
                     </Route>
                 </Route>
+                <Route path={"ustoz/minbari"} element={<UstozlarMinbari/>}/>
+                <Route path={"talaba/minbari"} element={<TalabaMinbari/>}/>
+                <Route path={"/raddiya"} element={<Raddiya/>}/>
                 <Route path={"/news/:uuid"} element={<Newss/>}/>
                 <Route path={"/"} element={<News/>}/>
                 <Route path={"/rahbariyat"} element={<Rahbariyat/>}/>

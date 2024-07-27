@@ -33,7 +33,7 @@ function AdminHeader() {
                             <button onClick={() => navigate("maqola/ustoz")}>Ustozlar_Minbari</button>
                             <button onClick={() => navigate("maqola/talaba")}>Talaba_Minbari</button>
                             <button onClick={() => navigate("maqola/maqolas")}>Ilmiy_Maqola</button>
-                            <button onClick={() => navigate("media/raddiyas")}>Raddiya</button>
+                            <button onClick={() => navigate("maqola/raddiyas")}>Raddiya</button>
                             <button onClick={() => navigate("media/turli_mavzu")}>Turli_Mavzu</button>
                         </div>
                     </div>

@@ -17,6 +17,7 @@ import {xorijSaga} from "./xorijSaga.js";
 import {videoSaga} from "./videoSaga.js";
 import {audioSaga} from "./audioSaga.js";
 import {raddiyavdSaga} from "./raddiyavdSaga.js";
+import {raddiyaSaga} from "./raddiyaSaga.js";
 import {talabaSaga} from "./talabaSaga.js";
 import {ustozSaga} from "./ustozSaga.js";
 
@@ -41,6 +42,7 @@ export default function* rootSaga() {
         audioSaga(),
         raddiyavdSaga(),
         talabaSaga(),
-        ustozSaga()
+        ustozSaga(),
+        raddiyaSaga(),
     ]);
 }

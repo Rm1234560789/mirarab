@@ -71,10 +71,10 @@ function Header() {
                             <li className="has-dropdown">
                                 <a href=""><p>Maqolalar</p></a>
                                 <div className={"dropdown2"}>
-                                    <p onClick={() => navigate("")}>Ustozlar minbari</p>
-                                    <p onClick={() => navigate("")}>Talaba minbari</p>
+                                    <p onClick={() => navigate("/ustoz/minbari")}>Ustozlar minbari</p>
+                                    <p onClick={() => navigate("/talaba/minbari")}>Talaba minbari</p>
                                     <p onClick={() => navigate("")}>Ilmiy maqolalar</p>
-                                    <p onClick={() => navigate("")}>Raddiyalar</p>
+                                    <p onClick={() => navigate("/raddiya")}>Raddiyalar</p>
                                     <p onClick={() => navigate("")}>Turli mavzular</p>
                                 </div>
                             </li>
