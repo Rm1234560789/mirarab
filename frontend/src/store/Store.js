@@ -22,6 +22,13 @@ import audioReducer from "../reducer/audioReducer.js";
 import raddiyavdReducer from "../reducer/raddiyavdReducer.js";
 import ustozReducer from "../reducer/ustozReducer.js";
 import talabaReducer from "../reducer/talabaReducer.js";
+import newnewsReducer from "../reducer/newnewsReducer.js";
+import newnewsbyidReducer from "../reducer/newnewsbyidReducer.js";
+import dunyoYangiliklariReducer from "../reducer/dunyoYangiliklariReducer.js";
+import {worldnewsid} from "../saga/dunyoYangiliklariIdSaga.js";
+import dunyoYangiliklariIdReducer from "../reducer/dunyoYangiliklariIdReducer.js";
+import savoljavobReducer from "../reducer/savoljavobReducer.js";
+import fikrmulohazaReducer from "../reducer/fikrmulohazaReducer.js";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -45,6 +52,12 @@ const rootReducer = combineReducers({
     raddiyavdReducer:raddiyavdReducer.reducer,
     ustozReducer:ustozReducer.reducer,
     talabaReducer:talabaReducer.reducer,
+    newnewsReducer:newnewsReducer.reducer,
+    newnewsid: newnewsbyidReducer,
+    dunyoYangiliklariReducer:dunyoYangiliklariReducer.reducer,
+    worldnewsid:dunyoYangiliklariIdReducer,
+    savoljavobReducer:savoljavobReducer.reducer,
+    fikrmulohazaReducer:fikrmulohazaReducer.reducer
 })
 
 

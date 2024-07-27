@@ -11,12 +11,14 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+//dunyo
 public class New_News {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(columnDefinition = "uuid DEFAULT gen_random_uuid()")
     private UUID id;
     private String title;
+    @Column(columnDefinition = "TEXT")
     private String description;
     private String img;
 }

@@ -19,6 +19,12 @@ import {audioSaga} from "./audioSaga.js";
 import {raddiyavdSaga} from "./raddiyavdSaga.js";
 import {talabaSaga} from "./talabaSaga.js";
 import {ustozSaga} from "./ustozSaga.js";
+import {newnewsSaga} from "./newnewsSaga.js";
+import {newnewsid} from "./newnewsbyidSaga.js";
+import {dunyoSaga} from "./dunyoYangiliklariSaga.js";
+import {worldnewsid} from "./dunyoYangiliklariIdSaga.js";
+import {savoljavobSaga} from "./savoljavobSaga.js";
+import {fikrmulohazaSaga} from "./fikrmulohazaSaga.js";
 
 
 export default function* rootSaga() {
@@ -41,6 +47,12 @@ export default function* rootSaga() {
         audioSaga(),
         raddiyavdSaga(),
         talabaSaga(),
-        ustozSaga()
+        ustozSaga(),
+        newnewsSaga(),
+        newnewsid(),
+        dunyoSaga(),
+        worldnewsid(),
+        savoljavobSaga(),
+        fikrmulohazaSaga()
     ]);
 }

@@ -42,6 +42,18 @@ import AllomaUser from "./pages/buxoro/AllomaUser.jsx";
 import AllomaCurrent from "./pages/buxoro/AllomaCurrent.jsx";
 import ObidaUser from "./pages/buxoro/ObidaUser.jsx";
 import CurrentObida from "./pages/buxoro/CurrentObida.jsx";
+import New_News from "././pages/yangiliklar/New_News";
+import NewsGet from "./pages/yangiliklar/NewsGet.jsx";
+import Dunyo_Yangiliklari from "./pages/yangiliklar/Dunyo_Yangiliklari.jsx";
+import Dunyo_YangiliklariGet from "./pages/yangiliklar/DunyoYangiliklariGet.jsx";
+import SavolJavob from "./pages/yangiliklar/SavolJavob.jsx";
+import FikrMulohaza from "./pages/yangiliklar/FikrMulohaza.jsx";
+import Yangiliklar from "./pages/yangiliklar/Yangiliklar.jsx";
+import UzbNews from "./pages/yangiliklar/Uzb_News.jsx";
+import Uzb_News from "./pages/yangiliklar/Uzb_News.jsx";
+import WorldNews from "./pages/yangiliklar/WorldNews.jsx";
+import FikrAdmin from "./pages/yangiliklar/FikrAdmin.jsx";
+import SavolJavobAdmin from "./pages/yangiliklar/SavolJavobAdmin.jsx";
 
 function App() {
 
@@ -81,6 +93,12 @@ function App() {
                         <Route path={"ustoz"} element={<Ustozlar/>}/>
                         <Route path={"talaba"} element={<Talaba/>}/>
                     </Route>
+                    <Route path={"yangiliklar"} element={<Yangiliklar/>}>
+                        <Route path={"uzb_news"} element={<Uzb_News/>}/>
+                        <Route path={"world_news"} element={<WorldNews/>}/>
+                        <Route path={"savol-javob"} element={<SavolJavobAdmin/>}/>
+                        <Route path={"fikr-mulohaza"} element={<FikrAdmin/>}/>
+                    </Route>
                 </Route>
                 <Route path={"/news/:uuid"} element={<Newss/>}/>
                 <Route path={"/"} element={<News/>}/>
@@ -95,6 +113,12 @@ function App() {
                 <Route path={"/buxoro/obidalari/:id"} element={<CurrentObida/>} />
                 <Route path={"/ulug/alloma"} element={<AllomaUser/>}/>
                 <Route path={"/ulug/alloma/:id"} element={<AllomaCurrent/>}/>
+                <Route path={"/new/news"} element={<New_News/>}/>
+                <Route path={"/new/news/:id"} element={<NewsGet/>}/>
+                <Route path={"/world/news"} element={<Dunyo_Yangiliklari/>}/>
+                <Route path={"/world/news/:id"} element={<Dunyo_YangiliklariGet/>}/>
+                <Route path={"/savol/javob"} element={<SavolJavob/>}/>
+                <Route path={"/fikr/mulohaza"} element={<FikrMulohaza/>}/>
             </Routes>
         </div>
     )
