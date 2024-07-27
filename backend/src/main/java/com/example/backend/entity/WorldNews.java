@@ -11,14 +11,14 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Raddiyalar {
+//uzbekistan
+public class WorldNews {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(columnDefinition = "uuid DEFAULT gen_random_uuid()")
     private UUID id;
-    @Column(columnDefinition = "TEXT")
-    private String title;
+    private String img;
     @Column(columnDefinition = "TEXT")
     private String description;
-    private String img;
+    private String title;
 }

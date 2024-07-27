@@ -62,18 +62,20 @@ function Header() {
                             <li className="has-dropdown">
                                 <a href=""><p>Yangiliklar</p></a>
                                 <div className={"dropdown2"}>
-                                    <p onClick={() => navigate("")}>O'zbekiston yangiliklari</p>
-                                    <p onClick={() => navigate("")}>Dunyo yangiliklari</p>
-                                    <p onClick={() => navigate("")}>Savol javob</p>
-                                    <p onClick={() => navigate("")}>Fikr mulohaza</p>
+                                    <p onClick={() => navigate("/new/news")}>O'zbekiston yangiliklari</p>
+                                    <p onClick={() => navigate("/world/news")}>Dunyo yangiliklari</p>
+                                    <p onClick={() => navigate("/savol/javob")}>Savol javob</p>
+                                    <p onClick={() => navigate("/fikr/mulohaza")}>Fikr mulohaza</p>
                                 </div>
                             </li>
                             <li className="has-dropdown">
                                 <a href=""><p>Maqolalar</p></a>
                                 <div className={"dropdown2"}>
-                                    <p onClick={() => navigate("")}>Ustozlar minbari</p>
-                                    <p onClick={() => navigate("")}>Talaba minbari</p>
+                                    <p onClick={() => navigate("/ustoz/minbari")}>Ustozlar minbari</p>
+                                    <p onClick={() => navigate("/talaba/minbari")}>Talaba minbari</p>
                                     <p onClick={() => navigate("")}>Ilmiy maqolalar</p>
+                                    <p onClick={() => navigate("/raddiya")}>Raddiyalar</p>
+                                    <p onClick={() => navigate("")}>Turli mavzular</p>
                                     <p onClick={() => navigate("")}>Raddiyalar</p>
                                     <p onClick={() => navigate("/turli/mavzu/user")}>Turli mavzular</p>
                                 </div>

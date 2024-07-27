@@ -24,7 +24,18 @@ function AdminHeader() {
             <div className="headerBottom1">
                 <div className="wrapper3">
                     <p onClick={() => navigate("oliy")}>Олий мадраса</p>
-                    <p onClick={() => navigate("yangiliklar")}>Янгиликлар</p>
+                    <div className={"dropdown"}>
+                        <p className={"dropdown-button"}>
+                            Янгиликлар
+                        </p>
+                        <div className="dropdown-menu">
+                            <button onClick={() => navigate("yangiliklar/uzb_news")}>O'zbekiston_Yangiliklari</button>
+                            <button onClick={() => navigate("yangiliklar/world_news")}>Dunyo_Yangiliklari</button>
+                            <button onClick={() => navigate("yangiliklar/savol-javob")}>Savol-Javob</button>
+                            <button onClick={() => navigate("yangiliklar/fikr-mulohaza")}>Fikr-Mulohaza</button>
+                        </div>
+                    </div>
+                    {/*<p onClick={() => navigate("yangiliklar")}>Янгиликлар</p>*/}
                     <div className="dropdown">
                         <p className="dropdown-button">
                             Maqolalar
@@ -33,7 +44,7 @@ function AdminHeader() {
                             <button onClick={() => navigate("maqola/ustoz")}>Ustozlar_Minbari</button>
                             <button onClick={() => navigate("maqola/talaba")}>Talaba_Minbari</button>
                             <button onClick={() => navigate("maqola/maqolas")}>Ilmiy_Maqola</button>
-                            <button onClick={() => navigate("media/raddiyas")}>Raddiya</button>
+                            <button onClick={() => navigate("maqola/raddiyas")}>Raddiya</button>
                             <button onClick={() => navigate("media/turli_mavzu")}>Turli_Mavzu</button>
                         </div>
                     </div>

@@ -17,6 +17,7 @@ public class Savol_Javob {
     @Column(columnDefinition = "uuid DEFAULT gen_random_uuid()")
     private UUID id;
     private String title;
+    @Column(columnDefinition = "TEXT")
     private String description;
     private String img;
 

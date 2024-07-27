@@ -1,0 +1,62 @@
+.talabaMinbari .wrapper{
+    margin-bottom: 76px;
+    max-width: 1500px;
+}
+
+.talabaMinbariTitle{
+    font-family: Playfair Display;
+    font-size: 40.02px;
+    font-weight: 700;
+    line-height: 53.35px;
+    text-align: center;
+    color: #0E5344;
+    margin-bottom: 44px;
+}
+
+.talabaMinbariCardMain{
+    width: 100%;
+    height: 368px;
+    display: flex;
+    gap: 24px;
+    cursor: pointer;
+}
+
+.talabaMinbariCardImg{
+    width: 632px;
+    height: 358px;
+}
+
+.talabaMinbariCardImg img{
+    height: 100%;
+    width: 100%;
+}
+
+.talabaMinbariCont{
+    width: 703px;
+    height: 368px;
+}
+
+.talabaMinbariContent{
+    max-width: 703px;
+    height: 360px;
+    overflow: hidden;
+}
+
+.talabaMinbariContentTitle{
+    font-family: Raleway;
+    font-size: 26.68px;
+    font-weight: 700;
+    line-height: 31.32px;
+    text-align: left;
+    color: #000000;
+}
+
+.talabaMinbariContentDesc{
+    font-family: Raleway;
+    font-size: 20.01px;
+    font-weight: 400;
+    line-height: 23.49px;
+    text-align: left;
+    color: #000000;
+}
+

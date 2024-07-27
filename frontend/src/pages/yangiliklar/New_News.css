@@ -1,0 +1,35 @@
+.uzb{
+    font-family: Playfair Display sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 33.32px;
+    text-align: center;
+ color: #0E5344E5;
+}
+.containers{
+    display: grid;
+    gap: 210px;
+    grid-template-columns: repeat(2, 1fr);
+}
+.img-news{
+    max-width: 100%;
+
+}
+.newnews .wrapper{
+    max-width: 1500px;
+}
+.text-news{
+    font-family: Playfair Display sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26.66px;
+    padding-top: 22px;
+    text-align: left;
+
+}
+@media (max-width: 768px) {
+    .containers {
+        grid-template-columns: 2fr; /* Single column layout on smaller screens */
+        gap: 10px; /* Reduce gap */
+    }
+}
