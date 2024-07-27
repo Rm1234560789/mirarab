@@ -54,6 +54,11 @@ import Uzb_News from "./pages/yangiliklar/Uzb_News.jsx";
 import WorldNews from "./pages/yangiliklar/WorldNews.jsx";
 import FikrAdmin from "./pages/yangiliklar/FikrAdmin.jsx";
 import SavolJavobAdmin from "./pages/yangiliklar/SavolJavobAdmin.jsx";
+import QabulUser from "./pages/QabulUser.jsx";
+import RaddiyaUser from "./pages/media/RaddiyaUser.jsx";
+import VideoUser from "./pages/media/VideoUser.jsx";
+import TurliMavzuAdm from "./pages/media/TurliMavzuAdm.jsx";
+import TurliMavzuUser from "./pages/media/TurliMavzuUser.jsx";
 
 function App() {
 
@@ -62,7 +67,7 @@ function App() {
             <Routes>
                 <Route path={"/rahbariyatUser"} element={<RahbariyatUser/>}/>
                 <Route path={"/buxoro/islom/poytaxti"} element={<BuxoroIslom/>}/>
-                <Route path={"/buxoro/islom/poytaxti/:id"} element ={<OneBuxoroIslom/>}/>
+                <Route path={"/buxoro/islom/poytaxti/:id"} element={<OneBuxoroIslom/>}/>
                 <Route path={"/admin"} element={<Admin/>}>
                     <Route path={"bosh"} element={<BoshSahifa/>}>
                         <Route path={"video"} element={<BoshVideo/>}/>
@@ -107,12 +112,16 @@ function App() {
                 <Route path={"/madrasa/:uuid"} element={<MadrasaHq/>}/>
                 <Route path={"/madrasa/hayot/:id"} element={<MadrasaHayoti/>}/>
                 <Route path={"/izoh"} element={<Izohlar/>}/>
-                <Route path={"/muqqadas/qadamjolar"} element={<Muqaddas/>} />
+                <Route path={"/muqqadas/qadamjolar"} element={<Muqaddas/>}/>
                 <Route path={"/muqqadas/qadamjolar/:id"} element={<MuqaddasCurrent/>}/>
-                <Route path={"/buxoro/obidalari"} element={<ObidaUser/>} />
-                <Route path={"/buxoro/obidalari/:id"} element={<CurrentObida/>} />
+                <Route path={"/buxoro/obidalari"} element={<ObidaUser/>}/>
+                <Route path={"/buxoro/obidalari/:id"} element={<CurrentObida/>}/>
                 <Route path={"/ulug/alloma"} element={<AllomaUser/>}/>
                 <Route path={"/ulug/alloma/:id"} element={<AllomaCurrent/>}/>
+                <Route path={"/qabul/user"} element={<QabulUser/>}/>
+                <Route path={"/raddiya/video"} element={<RaddiyaUser/>}/>
+                <Route path={"/video/user"} element={<VideoUser/>}/>
+                <Route path={"/turli/mavzu/user"} element={<TurliMavzuUser/>}/>
                 <Route path={"/new/news"} element={<New_News/>}/>
                 <Route path={"/new/news/:id"} element={<NewsGet/>}/>
                 <Route path={"/world/news"} element={<Dunyo_Yangiliklari/>}/>

@@ -25,6 +25,7 @@ import {dunyoSaga} from "./dunyoYangiliklariSaga.js";
 import {worldnewsid} from "./dunyoYangiliklariIdSaga.js";
 import {savoljavobSaga} from "./savoljavobSaga.js";
 import {fikrmulohazaSaga} from "./fikrmulohazaSaga.js";
+import {turliMavzularSaga} from "./turliMavzularSaga.js";
 
 
 export default function* rootSaga() {
@@ -53,6 +54,8 @@ export default function* rootSaga() {
         dunyoSaga(),
         worldnewsid(),
         savoljavobSaga(),
-        fikrmulohazaSaga()
+        fikrmulohazaSaga(),
+        ustozSaga(),
+        turliMavzularSaga()
     ]);
 }

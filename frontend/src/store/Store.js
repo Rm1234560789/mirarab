@@ -29,10 +29,31 @@ import {worldnewsid} from "../saga/dunyoYangiliklariIdSaga.js";
 import dunyoYangiliklariIdReducer from "../reducer/dunyoYangiliklariIdReducer.js";
 import savoljavobReducer from "../reducer/savoljavobReducer.js";
 import fikrmulohazaReducer from "../reducer/fikrmulohazaReducer.js";
+import turliMavzularReducer from "../reducer/turliMavzularReducer.js";
 
 const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
+    newsReducer: newsReducer.reducer,
+    vdReducer: vdReducer.reducer,
+    rahbariyatReducer: rahbariyatReducer.reducer,
+    maqolaReducer: maqolaReducer.reducer,
+    manaviyatRukniReducer: manaviyatRukniReducer.reducer,
+    madrasaHqReducer: madrasaHqReducer.reducer,
+    professorReducer: professorReducer.reducer,
+    buxoroReducer: buxoroReducer.reducer,
+    obidaReducer: obidaReducer.reducer,
+    qadamReducer: qadamReducer.reducer,
+    allomaReducer: allomaReducer.reducer,
+    qabulReducer: qabulReducer.reducer,
+    shartnomaReducer: shartnomaReducer.reducer,
+    xorijReducer: xorijReducer.reducer,
+    videoReducer: videoReducer.reducer,
+    audioReducer: audioReducer.reducer,
+    raddiyavdReducer: raddiyavdReducer.reducer,
+    ustozReducer: ustozReducer.reducer,
+    talabaReducer: talabaReducer.reducer,
+    turliMavzularReducer: turliMavzularReducer.reducer
     newsReducer:newsReducer.reducer,
     vdReducer:vdReducer.reducer,
     rahbariyatReducer:rahbariyatReducer.reducer,

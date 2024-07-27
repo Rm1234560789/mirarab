@@ -18,6 +18,7 @@ public class Qabul {
     @Column(columnDefinition = "uuid DEFAULT gen_random_uuid()")
     private UUID id;
     private String name;
+    @Column(columnDefinition = "TEXT")
     private String title;
     private String img;
     @Column(name = "created_at", updatable = false, nullable = false)

@@ -75,15 +75,15 @@ function Header() {
                                     <p onClick={() => navigate("")}>Talaba minbari</p>
                                     <p onClick={() => navigate("")}>Ilmiy maqolalar</p>
                                     <p onClick={() => navigate("")}>Raddiyalar</p>
-                                    <p onClick={() => navigate("")}>Turli mavzular</p>
+                                    <p onClick={() => navigate("/turli/mavzu/user")}>Turli mavzular</p>
                                 </div>
                             </li>
                             <li className="has-dropdown">
                                 <a href=""><p>Media</p></a>
                                 <div className={"dropdown2"}>
-                                    <p onClick={() => navigate("")}>Video materiallar</p>
+                                    <p onClick={() => navigate("/video/user")}>Video materiallar</p>
                                     <p onClick={() => navigate("")}>Audio materiallar</p>
-                                    <p onClick={() => navigate("")}>Raddiyalar (video)</p>
+                                    <p onClick={() => navigate("/raddiya/video")}>Raddiyalar (video)</p>
                                 </div>
                             </li>
                             <li className="has-dropdown">
@@ -102,15 +102,15 @@ function Header() {
                                 </div>
                             </li>
                             <li className="has-dropdown">
-                                <a href=""><p>Qabul</p></a>
-                                <div className={"dropdown2"}>
-                                    <p onClick={() => navigate("")}>Abiturentlar uchun</p>
-                                </div>
+                                <a onClick={() => {
+                                    navigate("/qabul/user")
+                                }}><p style={{color:"#0E5344E5"}}>Qabul</p></a>
                             </li>
                             <li className="has-dropdown">
                                 <a href=""><p>Buxoro Sharif</p></a>
                                 <div className={"dropdown2"}>
-                                    <p onClick={() => navigate("/buxoro/islom/poytaxti")}>Buxoro islom madaniyati poytaxti</p>
+                                    <p onClick={() => navigate("/buxoro/islom/poytaxti")}>Buxoro islom madaniyati
+                                        poytaxti</p>
                                     <p onClick={() => navigate("/buxoro/obidalari")}>Buxoro obidalari</p>
                                     <p onClick={() => navigate("/muqqadas/qadamjolar")}>Muqaddas qadamjolar</p>
                                     <p onClick={() => navigate("/ulug/alloma")}>Ulug allomalarimiz</p>
